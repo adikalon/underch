@@ -6,6 +6,17 @@ function underch.stone.register_stone(name, id, mossy)
 	local cobble = "underch:" .. id .. "_cobble"
 	local brick = "underch:" .. id .. "_brick"
 	local block = "underch:" .. id .. "_block"
+	local with_coal = "underch:" .. id .. "_with_coal"
+	local with_iron = "underch:" .. id .. "_with_iron"
+	local with_copper = "underch:" .. id .. "_with_copper"
+	local with_tin = "underch:" .. id .. "_with_tin"
+	local with_mese = "underch:" .. id .. "_with_mese"
+	local with_gold = "underch:" .. id .. "_with_gold"
+	local with_diamond = "underch:" .. id .. "_with_diamond"
+	local alien_mese_ore = "underch:" .. id .. "_alien_mese_ore"
+	local alien_diamond_ore = "underch:" .. id .. "_alien_diamond_ore"
+	local with_februm = "underch:" .. id .. "_with_februm"
+	local with_egerum = "underch:" .. id .. "_with_egerum"
 
 	minetest.register_node(base, {
 		description = name,
@@ -16,7 +27,7 @@ function underch.stone.register_stone(name, id, mossy)
 		legacy_mineral = true,
 		sounds = default.node_sound_stone_defaults(),
 	})
-	
+
 	minetest.register_node(cobble, {
 		description = name .. " Cobble",
 		tiles = {"underch_" .. id .. "_cobble.png"},
@@ -25,7 +36,7 @@ function underch.stone.register_stone(name, id, mossy)
 		after_dig_node = underch.jit.dig_shadow,
 		sounds = default.node_sound_stone_defaults(),
 	})
-	
+
 	minetest.register_node(brick, {
 		description = name .. " Bricks",
 		paramtype2 = "facedir",
@@ -44,6 +55,102 @@ function underch.stone.register_stone(name, id, mossy)
 		sounds = default.node_sound_stone_defaults(),
 	})
 
+	minetest.register_node(with_coal, {
+		description = name .. " Coal Ore",
+		tiles = {"underch_" .. id .. ".png^default_mineral_coal.png"},
+		groups = {cracky = 3},
+		drop = "default:coal_lump",
+		sounds = default.node_sound_stone_defaults(),
+	})
+
+	minetest.register_node(with_iron, {
+		description = name .. " Iron Ore",
+		tiles = {"underch_" .. id .. ".png^default_mineral_iron.png"},
+		groups = {cracky = 2},
+		drop = "default:iron_lump",
+		sounds = default.node_sound_stone_defaults(),
+	})
+
+	minetest.register_node(with_copper, {
+		description = name .. " Copper Ore",
+		tiles = {"underch_" .. id .. ".png^default_mineral_copper.png"},
+		groups = {cracky = 2},
+		drop = "default:copper_lump",
+		sounds = default.node_sound_stone_defaults(),
+	})
+
+	minetest.register_node(with_tin, {
+		description = name .. " Tin Ore",
+		tiles = {"underch_" .. id .. ".png^default_mineral_tin.png"},
+		groups = {cracky = 2},
+		drop = "default:tin_lump",
+		sounds = default.node_sound_stone_defaults(),
+	})
+
+	minetest.register_node(with_mese, {
+		description = name .. " Mese Ore",
+		tiles = {"underch_" .. id .. ".png^default_mineral_mese.png"},
+		groups = {cracky = 1},
+		drop = "default:mese_crystal",
+		sounds = default.node_sound_stone_defaults(),
+	})
+
+	minetest.register_node(with_gold, {
+		description = name .. " Gold Ore",
+		tiles = {"underch_" .. id .. ".png^default_mineral_gold.png"},
+		groups = {cracky = 2},
+		drop = "default:gold_lump",
+		sounds = default.node_sound_stone_defaults(),
+	})
+
+	minetest.register_node(with_diamond, {
+		description = name .. " Diamond Ore",
+		tiles = {"underch_" .. id .. ".png^default_mineral_diamond.png"},
+		groups = {cracky = 1},
+		drop = "default:diamond",
+		sounds = default.node_sound_stone_defaults(),
+	})
+
+	if underch.have_alien_material then
+		minetest.register_node(alien_mese_ore, {
+			description = name .. " Alien Mese Ore",
+			tiles = {"underch_" .. id .. ".png^alien_mese_ore.png"},
+			groups = {cracky = 1},
+			is_ground_content = true,
+			legacy_mineral = true,
+			drop = "alien_material:alien_mese",
+			sounds = default.node_sound_stone_defaults(),
+		})
+
+		minetest.register_node(alien_diamond_ore, {
+			description = name .. " Alien Diamond Ore",
+			tiles = {"underch_" .. id .. ".png^alien_diamond_ore.png"},
+			groups = {cracky = 1},
+			drop = "alien_material:alien_diamond",
+			is_ground_content = true,
+			legacy_mineral = true,
+			sounds = default.node_sound_stone_defaults(),
+		})
+	end
+
+	if underch.have_magic_materials then
+		minetest.register_node(with_februm, {
+			description = name .. " Februm Ore",
+			tiles = {"underch_" .. id .. ".png^magic_materials_mineral_februm.png"},
+			groups = {cracky = 1},
+			drop = "magic_materials:februm_crystal",
+			sounds = default.node_sound_stone_defaults(),
+		})
+
+		minetest.register_node(with_egerum, {
+			description = name .. " Egerum Ore",
+			tiles = {"underch_" .. id .. ".png^magic_materials_mineral_egerum.png"},
+			groups = {cracky = 1},
+			drop = "magic_materials:egerum_crystal",
+			sounds = default.node_sound_stone_defaults(),
+		})
+	end
+
 	--crafts
 	minetest.register_craft({
 		output = brick .. " 4",
@@ -52,7 +159,7 @@ function underch.stone.register_stone(name, id, mossy)
 			{base, base},
 		}
 	})
-	
+
 	minetest.register_craft({
 		output = block .. " 9",
 		recipe = {
@@ -70,28 +177,28 @@ function underch.stone.register_stone(name, id, mossy)
 
 	--stairs
 	underch.functions.register_stairs(
-		id, 
+		id,
 		{cracky = 3},
 		{"underch_" .. id .. ".png"},
 		name,
 		default.node_sound_stone_defaults())
 
 	underch.functions.register_stairs(
-		id .. "_cobble", 
+		id .. "_cobble",
 		{cracky = 3, cobblestairs = 1},
 		{"underch_" .. id .. "_cobble.png"},
 		name .. " Cobble",
 		default.node_sound_stone_defaults())
 
 	underch.functions.register_stairs(
-		id .. "_brick", 
+		id .. "_brick",
 		{cracky = 3},
 		{"underch_" .. id .. "_brick.png"},
 		name .. " Bricks",
 		default.node_sound_stone_defaults())
 
 	underch.functions.register_stairs(
-		id .. "_block", 
+		id .. "_block",
 		{cracky = 3},
 		{"underch_" .. id .. "_block.png"},
 		name .. " Block",
@@ -100,6 +207,22 @@ function underch.stone.register_stone(name, id, mossy)
 	underch.stone.defs[id] = {}
 	underch.stone.defs[id].base = minetest.get_content_id(base)
 	underch.stone.defs[id].cobble = minetest.get_content_id(cobble)
+	underch.stone.defs[id].with_coal = minetest.get_content_id(with_coal)
+	underch.stone.defs[id].with_iron = minetest.get_content_id(with_iron)
+	underch.stone.defs[id].with_copper = minetest.get_content_id(with_copper)
+	underch.stone.defs[id].with_tin = minetest.get_content_id(with_tin)
+	underch.stone.defs[id].with_gold = minetest.get_content_id(with_gold)
+	underch.stone.defs[id].with_diamond = minetest.get_content_id(with_diamond)
+
+	if underch.have_alien_material then
+		underch.stone.defs[id].alien_mese_ore = minetest.get_content_id(alien_mese_ore)
+		underch.stone.defs[id].alien_diamond_ore = minetest.get_content_id(alien_diamond_ore)
+	end
+
+	if underch.have_magic_materials then
+		underch.stone.defs[id].with_februm = minetest.get_content_id(with_februm)
+		underch.stone.defs[id].with_egerum = minetest.get_content_id(with_egerum)
+	end
 
 	if (mossy ~= nil) then
 		local mossy_cobble = "underch:" .. id .. "_mossy_cobble"
@@ -111,7 +234,7 @@ function underch.stone.register_stone(name, id, mossy)
 			after_dig_node = underch.jit.dig_shadow,
 			sounds = default.node_sound_stone_defaults(),
 		})
-	
+
 		minetest.register_craft({
 			type = "cooking",
 			output = base,
@@ -119,7 +242,7 @@ function underch.stone.register_stone(name, id, mossy)
 		})
 
 		underch.functions.register_stairs(
-			id .. "_mossy_cobble", 
+			id .. "_mossy_cobble",
 			{cracky = 3},
 			{"underch_" .. id .. "_mossy_cobble.png"},
 			mossy .. " " .. name .. " Cobble",
@@ -149,7 +272,7 @@ function underch.stone.register_stone(name, id, mossy)
 		walls.register(cobble .. "_wall", name .. " Cobblestone Wall", {"underch_" .. id .. "_cobble.png"},
 			cobble, default.node_sound_stone_defaults())
 	end
-	
+
 	if underch.have_advtrains then
 		advtrains.register_platform("underch", base)
 		advtrains.register_platform("underch", block)
@@ -185,4 +308,3 @@ underch.stone.register_stone("Schist", "schist", "Mossy")
 underch.stone.register_stone("Sichamine", "sichamine", "Weedy")
 underch.stone.register_stone("Slate", "slate", "Mossy")
 underch.stone.register_stone("Vindesite", "vindesite", "Mossy")
-
