@@ -181,7 +181,7 @@ underch.jit.biomegen = {
 	--coal
 	[18] = function(pos)
 		underch.jit.use_stone(pos, "amphibolite")
-		underch.jit.ore(pos, "underch:amphibolite", "underch:coal_dense_ore", 1/201)
+		underch.jit.ore(pos, "underch:amphibolite", "underch:amphibolite_coal_dense_ore", 1/201)
 	end,
 	--vindesite
 	[19] = function(pos)
@@ -199,7 +199,7 @@ underch.jit.biomegen = {
 	--tubers
 	[22] = function(pos)
 		underch.jit.use_stone(pos, "schist")
-		underch.jit.ore(pos, "underch:schist", "underch:coal_dense_ore", 1/201)
+		underch.jit.ore(pos, "underch:schist", "underch:schist_coal_dense_ore", 1/201)
 	end,
 	--black slime
 	[23] = function(pos)
@@ -350,7 +350,7 @@ underch.jit.biomegen = {
 	--copper
 	[51] = function(pos)
 		underch.jit.use_stone(pos, "gneiss")
-		underch.jit.ore(pos, "underch:gneiss", "underch:copper_dense_ore", 1/201)
+		underch.jit.ore(pos, "underch:gneiss", "underch:gneiss_copper_dense_ore", 1/201)
 	end,
 	--hektorite + lava
 	[52] = function(pos)
@@ -359,7 +359,7 @@ underch.jit.biomegen = {
 	--gold
 	[53] = function(pos)
 		underch.jit.use_stone(pos, "basalt")
-		underch.jit.ore(pos, "underch:basalt", "underch:gold_dense_ore", 1/407)
+		underch.jit.ore(pos, "underch:basalt", "underch:basalt_gold_dense_ore", 1/407)
 	end,
 	--quartz + water
 	[54] = function(pos)
@@ -372,7 +372,7 @@ underch.jit.biomegen = {
 	--iron
 	[55] = function(pos)
 		underch.jit.use_stone(pos, "granite")
-		underch.jit.ore(pos, "underch:granite", "underch:iron_dense_ore", 1/207)
+		underch.jit.ore(pos, "underch:granite", "underch:granite_iron_dense_ore", 1/207)
 	end,
 	--malachite
 	[56] = function(pos)
