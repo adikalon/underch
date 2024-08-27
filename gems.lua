@@ -1,6 +1,6 @@
 underch.gems = {}
 
-function underch.gems.register_gem(name, id)
+function underch.gems.register_gem(name, id, base)
 	local block = "underch:" .. id .. "_block"
 	local item = "underch:" .. id
 
@@ -20,7 +20,7 @@ function underch.gems.register_gem(name, id)
 
 	minetest.register_node("underch:" .. id .. "_ore", {
 		description = name .. " Ore",
-		tiles = {"default_stone.png^underch_" .. id .."_ore.png"},
+		tiles = {base .. "^underch_" .. id .."_ore.png"},
 		groups = {cracky=2},
 		drop = item,
 		sounds = default.node_sound_stone_defaults(),
@@ -61,19 +61,19 @@ function underch.gems.register_gem(name, id)
 	})
 
 	underch.functions.register_stairs(
-		id .. "_block", 
+		id .. "_block",
 		{cracky = 3},
 		{"underch_" .. id .. "_block.png"},
 		name .. " Block",
 		default.node_sound_glass_defaults())
 end
 
-underch.gems.register_gem("Amethyst", "amethyst");
-underch.gems.register_gem("Ruby", "ruby");
-underch.gems.register_gem("Emerald", "emerald");
-underch.gems.register_gem("Saphire", "saphire");
-underch.gems.register_gem("Quartz", "quartz");
-underch.gems.register_gem("Aquamarine", "aquamarine");
+underch.gems.register_gem("Amethyst", "amethyst", "underch_diorite.png");
+underch.gems.register_gem("Ruby", "ruby", "underch_granite.png");
+underch.gems.register_gem("Emerald", "emerald", "underch_phonolite.png");
+underch.gems.register_gem("Saphire", "saphire", "underch_gneiss.png");
+underch.gems.register_gem("Quartz", "quartz", "underch_diorite.png");
+underch.gems.register_gem("Aquamarine", "aquamarine", "underch_diorite.png");
 
 minetest.register_node("underch:mese_crystal", {
 	description = "Mese Crystal",
@@ -93,4 +93,3 @@ minetest.register_craft({
 	type = "shapeless",
 	recipe = {"underch:mese_crystal"}
 })
-
