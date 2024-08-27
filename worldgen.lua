@@ -165,6 +165,7 @@ function underch.use_stone(vi, data, id)
 	underch.functions.replace(vi, data, c_stone_with_tin, underch.stone.defs[id].with_tin)
 	underch.functions.replace(vi, data, c_stone_with_mese, underch.stone.defs[id].with_mese)
 	underch.functions.replace(vi, data, c_stone_with_gold, underch.stone.defs[id].with_gold)
+	underch.functions.replace(vi, data, c_stone_with_diamond, underch.stone.defs[id].with_diamond)
 
 	if underch.have_alien_material then
 		underch.functions.replace(vi, data, c_alien_mese_ore, underch.stone.defs[id].alien_mese_ore)
