@@ -101,7 +101,7 @@ function underch.functions.get_biome(darkness, water, pressure)
 		water = math.floor(water + 1)
 		return 57 + water*2 + darkness
 	else
-		return 61
+		return 60
 	end
 end
 
@@ -157,7 +157,7 @@ function underch.functions.on_wall_f(x, y, z, vi, area, data, p2data, def_wall, 
 	if data[vi] ~= def1 or math.random() > chance then
 		return
 	end
-	
+
 	local dirs = {}
 	local dirs_c = 0
 
@@ -203,7 +203,7 @@ function underch.functions.on_wall_w(x, y, z, vi, area, data, p2data, def_wall, 
 	if data[vi] ~= def1 or math.random() > chance then
 		return
 	end
-	
+
 	local dirs = {}
 	local dirs_c = 0
 
@@ -275,7 +275,7 @@ function underch.functions.is_crust(x, y, z, vi, area, data, stone)
 	if (dai ~= underch.c_crust and dai ~= underch.c_bulk and dai ~= stone) then
 		return true
 	end
-	
+
 	return false
 end
 

@@ -832,7 +832,7 @@ minetest.register_on_generated(function(minp, maxp, seed)
 
 				local darkness = nvals_darkness[nixyz2]
 				local water = nvals_water[nixyz2]
-				local pressure = underch.functions.get_pressure(y, nvals_pressure[nixyz2])
+				local pressure = underch.functions.get_pressure(y * 3, nvals_pressure[nixyz2])
 
 				--[[if y > -100 then -- limit the biome variety near surface
 					darkness = -0.01*y*darkness - 1 - 0.01*y
@@ -840,10 +840,22 @@ minetest.register_on_generated(function(minp, maxp, seed)
 				end--]]
 				local biome = underch.functions.get_biome(darkness, water, pressure) + 1
 
-				if (biome < 1) or (biome > 62) then
-					print(string.format("Wrong biome %i", biome))
+				if biome < 1 then
 					biome = 1
 				end
+
+				if biome > 60 then
+					biome = biome % 60
+				end
+
+				if biome == 0 then
+					biome = 60
+				end
+
+				-- if (biome < 1) or (biome > 62) then
+				-- 	print(string.format("Wrong biome %i", biome))
+				-- 	biome = 1
+				-- end
 
 				underch.biomegen[biome](x, y, z, vi, data, p2data, area, y == y1)
 				if data[vi] == c_stone then
