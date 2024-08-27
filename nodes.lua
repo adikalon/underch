@@ -110,15 +110,6 @@ minetest.register_node("underch:malachite", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("underch:obscurite", {
-	description = "Obscurite",
-	tiles = {"underch_obscurite.png"},
-	groups = {jit_shadow = 1},
-	after_dig_node = underch.jit.dig_shadow,
-	legacy_mineral = true,
-	sounds = default.node_sound_stone_defaults(),
-})
-
 minetest.register_node("underch:shinestone", {
 	description = "Shinestone",
 	tiles = {"underch_shinestone.png"},
