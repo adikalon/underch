@@ -11,7 +11,7 @@ function underch.mushrooms.register_mushroom(id, name, texture, heal, box)
 		sunlight_propagates = true,
 		walkable = false,
 		buildable_to = true,
-		groups = {snappy = 3, attached_node = 1, flammable = 1},
+		groups = {snappy = 3, attached_node = 1, flammable = 1, food = heal, eatable = heal},
 		sounds = default.node_sound_leaves_defaults(),
 		on_use = minetest.item_eat(heal),
 		selection_box = {
@@ -43,7 +43,7 @@ minetest.register_node("underch:burning_mushroom", {
 	sunlight_propagates = true,
 	walkable = false,
 	buildable_to = true,
-	groups = {snappy = 3, attached_node = 1},
+	groups = {snappy = 3, attached_node = 1, food = -2, eatable = -2},
 	sounds = default.node_sound_leaves_defaults(),
 	on_use = minetest.item_eat(-2),
 	light_source = 8,
@@ -63,8 +63,7 @@ minetest.register_node("underch:dark_tuber", {
 	paramtype2 = "facedir",
 	sunlight_propagates = true,
 	walkable = false,
-	groups = {snappy = 3, attached_node = 1},
+	groups = {snappy = 3, attached_node = 1, food = 2, eatable = 2},
 	sounds = default.node_sound_leaves_defaults(),
 	on_use = minetest.item_eat(2),
 })
-
