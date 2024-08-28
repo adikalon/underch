@@ -332,6 +332,7 @@ underch.jit.biomegen = {
 	--lava cracks
 	[48] = function(pos)
 		underch.jit.use_stone(pos, "omphyrite")
+		underch.jit.ore(pos, "underch:omphyrite", "underch:lava_crack", 1/18)
 	end,
 	--diamonds
 	[49] = function(pos)

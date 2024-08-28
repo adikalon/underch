@@ -75,6 +75,7 @@ local c_mese_crystal = minetest.get_content_id("underch:mese_crystal")
 local c_fire = minetest.get_content_id("fire:permanent_flame")
 local c_fiery_dust = minetest.get_content_id("underch:fiery_dust")
 local c_fiery_vine = minetest.get_content_id("underch:fiery_vine")
+local c_lava_crack = minetest.get_content_id("underch:lava_crack")
 
 local c_quartz_block = minetest.get_content_id("underch:quartz_block")
 local c_aquamarine_block = minetest.get_content_id("underch:aquamarine_block")
@@ -694,6 +695,7 @@ else
 		--lava cracks
 		[48] = function(x, y, z, vi, data, p2data, area, lastlayer)
 			underch.use_stone(vi, data, "omphyrite")
+			underch.functions.ore(vi, data, underch.stone.defs["omphyrite"].base, c_lava_crack, 1/18)
 		end,
 		--diamonds
 		[49] = function(x, y, z, vi, data, p2data, area, lastlayer)
