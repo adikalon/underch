@@ -243,7 +243,7 @@ if underch.use_jit then
 		end,
 		--black slime
 		[23] = function(x, y, z, vi, data, p2data, area, lastlayer)
-			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_black_slime, 1/300)
+			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_black_slime, 1/1800)
 		end,
 		--quartz
 		[24] = function(x, y, z, vi, data, p2data, area, lastlayer)
@@ -261,7 +261,7 @@ if underch.use_jit then
 		end,
 		--green slime
 		[27] = function(x, y, z, vi, data, p2data, area, lastlayer)
-			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_green_slime, 1/300)
+			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_green_slime, 1/1800)
 		end,
 		--sichamine
 		[28] = function(x, y, z, vi, data, p2data, area, lastlayer)
@@ -321,7 +321,7 @@ if underch.use_jit then
 		end,
 		--purple slime
 		[39] = function(x, y, z, vi, data, p2data, area, lastlayer)
-			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_purple_slime, 1/300)
+			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_purple_slime, 1/1800)
 		end,
 		--mese + saphire
 		[40] = function(x, y, z, vi, data, p2data, area, lastlayer)
@@ -345,7 +345,7 @@ if underch.use_jit then
 		end,
 		--red slime
 		[43] = function(x, y, z, vi, data, p2data, area, lastlayer)
-			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_red_slime, 1/300)
+			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_red_slime, 1/1800)
 		end,
 		--hot water
 		[44] = function(x, y, z, vi, data, p2data, area, lastlayer)
@@ -516,7 +516,7 @@ else
 		[23] = function(x, y, z, vi, data, p2data, area, lastlayer)
 			underch.use_stone(vi, data, "slate")
 			underch.functions.ore(vi, data, underch.stone.defs["slate"].base, c_black_slimy_block, 1/1000)
-			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_black_slime, 1/300, underch.stone.defs["slate"].base)
+			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_black_slime, 1/1800, underch.stone.defs["slate"].base)
 		end,
 		--quartz
 		[24] = function(x, y, z, vi, data, p2data, area, lastlayer)
@@ -543,7 +543,7 @@ else
 		[27] = function(x, y, z, vi, data, p2data, area, lastlayer)
 			underch.use_stone(vi, data, "green_slimestone")
 			underch.functions.ore(vi, data, underch.stone.defs["green_slimestone"].base, c_green_slimy_block, 1/1000)
-			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_green_slime, 1/300, underch.stone.defs["green_slimestone"].base)
+			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_green_slime, 1/1800, underch.stone.defs["green_slimestone"].base)
 		end,
 		--sichamine
 		[28] = function(x, y, z, vi, data, p2data, area, lastlayer)
@@ -625,7 +625,7 @@ else
 		[39] = function(x, y, z, vi, data, p2data, area, lastlayer)
 			underch.use_stone(vi, data, "purple_slimestone")
 			underch.functions.ore(vi, data, underch.stone.defs["purple_slimestone"].base, c_purple_slimy_block, 1/300)
-			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_purple_slime, 1/300, underch.stone.defs["purple_slimestone"].base)
+			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_purple_slime, 1/1800, underch.stone.defs["purple_slimestone"].base)
 		end,
 		--mese + saphire
 		[40] = function(x, y, z, vi, data, p2data, area, lastlayer)
@@ -656,7 +656,7 @@ else
 		[43] = function(x, y, z, vi, data, p2data, area, lastlayer)
 			underch.use_stone(vi, data, "red_slimestone")
 			underch.functions.ore(vi, data, underch.stone.defs["red_slimestone"].base, c_red_slimy_block, 1/300)
-			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_red_slime, 1/300, underch.stone.defs["red_slimestone"].base)
+			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_red_slime, 1/1800, underch.stone.defs["red_slimestone"].base)
 		end,
 		--hot water
 		[44] = function(x, y, z, vi, data, p2data, area, lastlayer)
@@ -832,7 +832,7 @@ minetest.register_on_generated(function(minp, maxp, seed)
 
 				local darkness = nvals_darkness[nixyz2]
 				local water = nvals_water[nixyz2]
-				local pressure = underch.functions.get_pressure(y * 3, nvals_pressure[nixyz2])
+				local pressure = underch.functions.get_pressure(y * underch.functions.pressure_multiplier(y), nvals_pressure[nixyz2])
 
 				--[[if y > -100 then -- limit the biome variety near surface
 					darkness = -0.01*y*darkness - 1 - 0.01*y
@@ -841,7 +841,7 @@ minetest.register_on_generated(function(minp, maxp, seed)
 				local biome = underch.functions.get_biome(darkness, water, pressure) + 1
 
 				if biome < 1 then
-					biome = 1
+					biome = biome * -1
 				end
 
 				if biome > 60 then

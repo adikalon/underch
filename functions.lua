@@ -95,11 +95,11 @@ function underch.functions.get_biome(darkness, water, pressure)
 	elseif pressure == 3 then
 		darkness = math.floor((darkness + 1)*1.5)
 		water = math.floor((water + 1)*1.5)
-		return 48 + water*3 + darkness
+		return 47 + water*3 + darkness
 	elseif pressure == 4 then
 		darkness = math.floor(darkness + 1)
 		water = math.floor(water + 1)
-		return 57 + water*2 + darkness
+		return 56 + water*2 + darkness
 	else
 		return 60
 	end
@@ -292,4 +292,24 @@ function underch.functions.register_stairs(id_, groups_, texture_, name_, sounds
 	elseif underch.have_stairs then
 		stairs.register_stair_and_slab(id_, "underch:" .. id_, groups_, texture_, name_ .. " Stair", name_ .. " Slab", sounds_)
 	end
+end
+
+function underch.functions.pressure_multiplier(y)
+	local pressure = 1
+
+	if y <= -2000 then
+		local m = math.floor(y / 1000)
+
+		if m < 0 then
+			m = m * -1
+		end
+
+		if m > 4 then
+			m = 4
+		end
+
+		pressure = m
+	end
+
+	return pressure
 end
