@@ -313,3 +313,35 @@ function underch.functions.pressure_multiplier(y)
 
 	return pressure
 end
+
+function underch.functions.correct_biome(biome, total)
+	if biome == 0 then
+		return total
+	end
+
+	if biome < 0 then
+		if (biome * -1) > total then
+			local i = (biome * -1) % total
+
+			if i == 0 then
+				return total
+			end
+
+			return total + (i * -1)
+		end
+
+		return total + (biome * -1)
+	end
+
+	if biome > total then
+		local i = biome % total
+
+		if i == 0 then
+			return total
+		end
+
+		return i
+	end
+
+	return biome
+end

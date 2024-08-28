@@ -839,18 +839,7 @@ minetest.register_on_generated(function(minp, maxp, seed)
 					water = -0.01*y*water - 1 - 0.01*y
 				end--]]
 				local biome = underch.functions.get_biome(darkness, water, pressure) + 1
-
-				if biome < 1 then
-					biome = biome * -1
-				end
-
-				if biome > 60 then
-					biome = biome % 60
-				end
-
-				if biome == 0 then
-					biome = 60
-				end
+				biome = underch.functions.correct_biome(biome, 60)
 
 				-- if (biome < 1) or (biome > 62) then
 				-- 	print(string.format("Wrong biome %i", biome))
