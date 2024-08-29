@@ -8,7 +8,7 @@ function underch.jit.dig_shadow(pos, oldnode, oldmetadata, digger)
 end
 
 minetest.register_node("underch:bulk", {
-	description = "O_O",
+	description = underch.S("O_O"),
 	tiles = {"underch_bulk.png"},
 	groups = {jit_shadow = 1},
 	is_ground_content = true,
@@ -21,7 +21,7 @@ minetest.register_node("underch:bulk", {
 })
 
 minetest.register_node("underch:crust", {
-	description = "o_O",
+	description = underch.S("o_O"),
 	tiles = {"underch_crust.png"},
 	groups = {jit_shadow = 1},
 	is_ground_content = true,
@@ -465,11 +465,12 @@ function underch.jit.reveal(pos, recursive, crust)
 	local pressure = underch.functions.get_pressure(pos.y, minetest.get_perlin(underch.np_pressure):get_3d(pos))
 
 	local biome = underch.functions.get_biome(darkness, water, pressure) + 1
+	biome = underch.functions.correct_biome(biome, 60)
 
-	if (biome < 1) or (biome > 62) then
-		print(string.format("Wrong biome %i", biome))
-		biome = 1
-	end
+	-- if (biome < 1) or (biome > 62) then
+	-- 	print(string.format("Wrong biome %i", biome))
+	-- 	biome = 1
+	-- end
 
 	underch.jit.biomegen[biome](pos)
 
@@ -578,7 +579,7 @@ if underch.have_xtraores then
 end
 
 minetest.register_lbm{
-     	nodenames = {"underch:crust"},
+	nodenames = {"underch:crust"},
 	name = "underch:jit",
 	run_at_every_load = true,
 	action = function(pos, node)

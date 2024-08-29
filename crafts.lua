@@ -98,7 +98,7 @@ minetest.register_craft({
 --clay
 
 minetest.register_node("underch:clay", {
-	description = "Brown Clay",
+	description = underch.S("Brown Clay"),
 	tiles = {"underch_clay.png"},
 	groups = {crumbly = 3, jit_shadow = 1},
 	after_dig_node = underch.jit.dig_shadow,
@@ -107,7 +107,7 @@ minetest.register_node("underch:clay", {
 })
 
 minetest.register_craftitem("underch:clay_lump", {
-	description = "Brown Clay Lump",
+	description = underch.S("Brown Clay Lump"),
 	inventory_image = "underch_clay_lump.png",
 })
 

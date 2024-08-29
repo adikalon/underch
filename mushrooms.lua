@@ -21,12 +21,12 @@ function underch.mushrooms.register_mushroom(id, name, texture, heal, box)
 	})
 end
 
-underch.mushrooms.register_mushroom("underch:green_mushroom", "Green Mushroom", "underch_green_mushroom.png", -9, {-6 / 16, -0.5, -6 / 16, 6 / 16, 5 / 16, 6 / 16});
-underch.mushrooms.register_mushroom("underch:black_mushroom", "Black Mushroom", "underch_black_mushroom.png", 0, {-4 / 16, -0.5, -4 / 16, 4 / 16, 1 / 16, 4 / 16});
-underch.mushrooms.register_mushroom("underch:orange_mushroom", "Orange Mushroom", "underch_orange_mushroom.png", 1, {-3 / 16, -0.5, -3 / 16, 3 / 16, 7 / 16, 3 / 16});
+underch.mushrooms.register_mushroom("underch:green_mushroom", underch.S("Green Mushroom"), "underch_green_mushroom.png", -9, {-6 / 16, -0.5, -6 / 16, 6 / 16, 5 / 16, 6 / 16});
+underch.mushrooms.register_mushroom("underch:black_mushroom", underch.S("Black Mushroom"), "underch_black_mushroom.png", 0, {-4 / 16, -0.5, -4 / 16, 4 / 16, 1 / 16, 4 / 16});
+underch.mushrooms.register_mushroom("underch:orange_mushroom", underch.S("Orange Mushroom"), "underch_orange_mushroom.png", 1, {-3 / 16, -0.5, -3 / 16, 3 / 16, 7 / 16, 3 / 16});
 
 minetest.register_node("underch:burning_mushroom", {
-	description = "Burning Mushroom",
+	description = underch.S("Burning Mushroom"),
 	tiles = {{
 		name = "underch_burning_mushroom.png",
 		animation = {
@@ -55,7 +55,7 @@ minetest.register_node("underch:burning_mushroom", {
 })
 
 minetest.register_node("underch:dark_tuber", {
-	description = "Dark Tuber",
+	description = underch.S("Dark Tuber"),
 	tiles = {"underch_dark_tuber.png"},
 	drawtype = "mesh",
 	mesh = "underch_dark_tuber.obj",

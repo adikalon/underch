@@ -279,9 +279,9 @@ function underch.functions.is_crust(x, y, z, vi, area, data, stone)
 	return false
 end
 
-function underch.functions.register_stairs(id_, groups_, texture_, name_, sounds_)
+function underch.functions.register_stairs(id_, groups_, texture_, name_, sounds_, names_)
 	if underch.have_stairsredo then
-		stairs.register_all(id_, "underch:" .. id_, groups_, texture_, name_ .. " Stair", name_ .. " Slab", sounds_)
+		stairs.register_all(id_, "underch:" .. id_, groups_, texture_, names_.stair, names_.slab, sounds_)
 	elseif underch.have_moreblocks then
 		stairsplus:register_all("underch", id_, "underch:" .. id_, {
 			description = name_,
@@ -290,7 +290,7 @@ function underch.functions.register_stairs(id_, groups_, texture_, name_, sounds
 			sounds = sounds_,
 		})
 	elseif underch.have_stairs then
-		stairs.register_stair_and_slab(id_, "underch:" .. id_, groups_, texture_, name_ .. " Stair", name_ .. " Slab", sounds_)
+		stairs.register_stair_and_slab(id_, "underch:" .. id_, groups_, texture_, names_.stair, names_.slab, sounds_, true, names_.inner, names_.outer)
 	end
 end
 

@@ -1,7 +1,7 @@
 -- Classic
 
 minetest.register_node("underch:mossy_gravel", {
-	description = "Mossy Gravel",
+	description = underch.S("Mossy Gravel"),
 	tiles = {"underch_mossy_gravel.png"},
 	groups = {crumbly = 2, falling_node = 1},
 	is_ground_content = true,
@@ -9,7 +9,7 @@ minetest.register_node("underch:mossy_gravel", {
 })
 
 minetest.register_node("underch:mossy_dirt", {
-	description = "Mossy Dirt",
+	description = underch.S("Mossy Dirt"),
 	tiles = {"underch_mossy_dirt.png"},
 	groups = {crumbly = 3, soil = 1, jit_shadow = 1},
 	after_dig_node = underch.jit.dig_shadow,
@@ -18,7 +18,7 @@ minetest.register_node("underch:mossy_dirt", {
 })
 
 minetest.register_node("underch:leafstone", {
-	description = "Leafstone",
+	description = underch.S("Leafstone"),
 	tiles = {"underch_leafstone.png"},
 	groups = {cracky = 3, stone = 1},
 	is_ground_content = false,
@@ -26,7 +26,7 @@ minetest.register_node("underch:leafstone", {
 })
 
 minetest.register_node("underch:light_leafstone", {
-	description = "Light Leafstone",
+	description = underch.S("Light Leafstone"),
 	tiles = {"underch_light_leafstone.png"},
 	groups = {cracky = 3, stone = 1},
 	is_ground_content = false,
@@ -34,7 +34,7 @@ minetest.register_node("underch:light_leafstone", {
 })
 
 minetest.register_node("underch:goldstone", {
-	description = "Goldstone",
+	description = underch.S("Goldstone"),
 	tiles = {"underch_goldstone.png"},
 	groups = {cracky = 3, stone = 1},
 	is_ground_content = false,
@@ -44,7 +44,7 @@ minetest.register_node("underch:goldstone", {
 -- Sichamine
 
 --[[minetest.register_node("underch:sichamine", {
-	description = "Sichamine",
+	description = underch.S("Sichamine"),
 	tiles = {"underch_sichamine.png"},
 	groups = {cracky = 3, stone = 1},
 	is_ground_content = true,
@@ -52,7 +52,7 @@ minetest.register_node("underch:goldstone", {
 })--]]
 
 minetest.register_node("underch:dark_sichamine", {
-	description = "Dark Sichamine",
+	description = underch.S("Dark Sichamine"),
 	tiles = {"underch_dark_sichamine.png"},
 	groups = {cracky = 3, stone = 1, jit_shadow = 1},
 	after_dig_node = underch.jit.dig_shadow,
@@ -61,7 +61,7 @@ minetest.register_node("underch:dark_sichamine", {
 })
 
 minetest.register_node("underch:weedy_sichamine", {
-	description = "Weedy Sichamine",
+	description = underch.S("Weedy Sichamine"),
 	tiles = {"underch_weedy_sichamine.png"},
 	groups = {cracky = 3, stone = 1, jit_shadow = 1},
 	after_dig_node = underch.jit.dig_shadow,
@@ -70,7 +70,7 @@ minetest.register_node("underch:weedy_sichamine", {
 })
 
 minetest.register_node("underch:sichamine_lamp", {
-	description = "Sichamine Lamp",
+	description = underch.S("Sichamine Lamp"),
 	tiles = {"underch_sichamine_lamp.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
@@ -84,7 +84,7 @@ minetest.register_node("underch:sichamine_lamp", {
 -- Hektorite
 
 --[[minetest.register_node("underch:hektorite", {
-	description = "Hektorite",
+	description = underch.S("Hektorite"),
 	tiles = {"underch_hektorite.png"},
 	groups = {cracky = 3, stone = 1},
 	is_ground_content = true,
@@ -94,7 +94,7 @@ minetest.register_node("underch:sichamine_lamp", {
 -- Deep underground
 
 --[[minetest.register_node("underch:basalt", {
-	description = "Basalt",
+	description = underch.S("Basalt"),
 	tiles = {"underch_basalt.png"},
 	groups = {cracky = 3, stone = 1},
 	legacy_mineral = true,
@@ -102,7 +102,7 @@ minetest.register_node("underch:sichamine_lamp", {
 })--]]
 
 minetest.register_node("underch:malachite", {
-	description = "Malachite",
+	description = underch.S("Malachite"),
 	tiles = {"underch_malachite.png"},
 	groups = {cracky = 3, jit_shadow = 1},
 	after_dig_node = underch.jit.dig_shadow,
@@ -111,7 +111,7 @@ minetest.register_node("underch:malachite", {
 })
 
 minetest.register_node("underch:shinestone", {
-	description = "Shinestone",
+	description = underch.S("Shinestone"),
 	tiles = {"underch_shinestone.png"},
 	groups = {cracky = 3, jit_shadow = 1},
 	after_dig_node = underch.jit.dig_shadow,
@@ -121,7 +121,7 @@ minetest.register_node("underch:shinestone", {
 })
 
 minetest.register_node("underch:lava_crack", {
-	description = "Lava Crack",
+	description = underch.S("Lava Crack"),
 	tiles = {"underch_omphyrite.png^underch_lava_crack.png"},
 	groups = {cracky = 3, jit_shadow = 1},
 	drop = 'underch:omphyrite_cobble',
@@ -137,7 +137,7 @@ minetest.register_node("underch:lava_crack", {
 -- Vindesite
 
 --[[minetest.register_node("underch:vindesite", {
-	description = "Vindesite",
+	description = underch.S("Vindesite"),
 	tiles = {"underch_vindesite.png"},
 	groups = {cracky = 3, stone = 1, vindesite = 1},
 	legacy_mineral = true,
@@ -145,7 +145,7 @@ minetest.register_node("underch:lava_crack", {
 })
 
 minetest.register_node("underch:dark_vindesite", {
-	description = "Dark Vindesite",
+	description = underch.S("Dark Vindesite"),
 	tiles = {"underch_dark_vindesite.png"},
 	groups = {cracky = 3, stone = 1, vindesite = 1},
 	legacy_mineral = true,
@@ -153,7 +153,7 @@ minetest.register_node("underch:dark_vindesite", {
 })--]]
 
 minetest.register_node("underch:burner", {
-	description = "Burner",
+	description = underch.S("Burner"),
 	tiles = {"underch_burner.png"},
 	groups = {cracky = 3, igniter = 4, jit_shadow = 1},
 	legacy_mineral = true,
@@ -164,7 +164,7 @@ minetest.register_node("underch:burner", {
 })
 
 minetest.register_node("underch:vindesite_quartz_ore", {
-	description = "Vindesite Quartz Ore",
+	description = underch.S("Vindesite Quartz Ore"),
 	tiles = {"underch_vindesite.png^underch_quartz_ore.png"},
 	groups = {cracky=2, jit_shadow = 1},
 	after_dig_node = underch.jit.dig_shadow,
@@ -175,7 +175,7 @@ minetest.register_node("underch:vindesite_quartz_ore", {
 -- Foliage
 
 minetest.register_node("underch:fiery_vine", {
-	description = "Fiery Vine",
+	description = underch.S("Fiery Vine"),
 	drawtype = "signlike",
 	tiles = {"underch_fiery_vine.png"},
 	inventory_image = "underch_fiery_vine.png",
@@ -196,7 +196,7 @@ minetest.register_node("underch:fiery_vine", {
 })
 
 minetest.register_node("underch:underground_vine", {
-	description = "Underground Vine",
+	description = underch.S("Underground Vine"),
 	drawtype = "signlike",
 	tiles = {"underch_underground_vine.png"},
 	inventory_image = "underch_underground_vine.png",
@@ -215,7 +215,7 @@ minetest.register_node("underch:underground_vine", {
 })
 
 minetest.register_node("underch:mould", {
-	description = "Mould",
+	description = underch.S("Mould"),
 	drawtype = "signlike",
 	tiles = {"underch_mould.png"},
 	inventory_image = "underch_mould.png",
@@ -233,7 +233,7 @@ minetest.register_node("underch:mould", {
 })
 
 minetest.register_node("underch:moss", {
-	description = "Moss",
+	description = underch.S("Moss"),
 	drawtype = "signlike",
 	tiles = {"underch_moss.png"},
 	inventory_image = "underch_moss.png",
@@ -251,7 +251,7 @@ minetest.register_node("underch:moss", {
 })
 
 minetest.register_node("underch:dry_moss", {
-	description = "Dry Moss",
+	description = underch.S("Dry Moss"),
 	drawtype = "signlike",
 	tiles = {"underch_dry_moss.png"},
 	inventory_image = "underch_dry_moss.png",
@@ -269,7 +269,7 @@ minetest.register_node("underch:dry_moss", {
 })
 
 minetest.register_node("underch:dead_bush", {
-	description = "Underground Dead Bush",
+	description = underch.S("Underground Dead Bush"),
 	tiles = {"underch_underground_dead_bush.png"},
 	inventory_image = "underch_underground_dead_bush.png",
 	wield_image = "underch_underground_dead_bush.png",
@@ -286,7 +286,7 @@ minetest.register_node("underch:dead_bush", {
 })
 
 minetest.register_node("underch:torchberries", {
-	description = "Torchberries",
+	description = underch.S("Torchberries"),
 	tiles = {"underch_torchberries.png"},
 	inventory_image = "underch_torchberries.png",
 	wield_image = "underch_torchberries.png",
@@ -306,7 +306,7 @@ minetest.register_node("underch:torchberries", {
 })
 
 minetest.register_node("underch:underground_bush", {
-	description = "Underground Bush",
+	description = underch.S("Underground Bush"),
 	drawtype = "allfaces",
 	waving = 1,
 	tiles = {"underch_underground_bush.png"},
@@ -320,7 +320,7 @@ minetest.register_node("underch:underground_bush", {
 -- Other
 
 minetest.register_node("underch:dust", {
-	description = "Dust",
+	description = underch.S("Dust"),
 	tiles = {"underch_dust.png"},
 	groups = {crumbly = 2, falling_node = 1},
 	is_ground_content = true,
@@ -328,7 +328,7 @@ minetest.register_node("underch:dust", {
 })
 
 minetest.register_node("underch:fiery_dust", {
-	description = "Fiery Dust",
+	description = underch.S("Fiery Dust"),
 	tiles = {"underch_fiery_dust.png"},
 	groups = {crumbly = 2, hot = 1, falling_node = 1},
 	is_ground_content = true,
@@ -339,7 +339,7 @@ minetest.register_node("underch:fiery_dust", {
 })
 
 minetest.register_node("underch:coal_dust", {
-	description = "Coal Dust",
+	description = underch.S("Coal Dust"),
 	tiles = {"underch_coal_dust.png"},
 	groups = {crumbly = 2, falling_node = 1, flammable = 1},
 	is_ground_content = false,
@@ -347,7 +347,7 @@ minetest.register_node("underch:coal_dust", {
 })
 
 minetest.register_node("underch:coal_diamond", {
-	description = "Diamond Ore in Coal Block",
+	description = underch.S("Diamond Ore in Coal Block"),
 	tiles = {"default_coal_block.png^default_mineral_diamond.png"},
 	is_ground_content = false,
 	groups = {cracky = 1, jit_shadow = 1},
@@ -361,7 +361,7 @@ minetest.register_node("underch:coal_diamond", {
 })
 
 minetest.register_node("underch:ruby_dust", {
-	description = "Ruby Dust",
+	description = underch.S("Ruby Dust"),
 	tiles = {"underch_ruby_dust.png"},
 	groups = {crumbly = 2, falling_node = 1},
 	is_ground_content = false,

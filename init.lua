@@ -5,7 +5,8 @@ underch = {}
 --Scale all damage by a given factor
 underch.damage_scaling_factor = 1
 
-underch.modpath = minetest.get_modpath("underch")
+underch.modpath = minetest.get_modpath(minetest.get_current_modname())
+underch.S = minetest.get_translator(minetest.get_current_modname())
 
 underch.have_advtrains = minetest.get_modpath("advtrains") ~= nil
 underch.have_bucket = minetest.get_modpath("bucket") ~= nil
@@ -121,7 +122,7 @@ end
 -- moss growth
 
 minetest.register_abm({
-	label = "Moss growth",
+	label = underch.S("Moss growth"),
 	nodenames = {"group:cobble", "group:cobblestairs", "group:wall"},
 	neighbors = {"group:water"},
 	interval = 16,
