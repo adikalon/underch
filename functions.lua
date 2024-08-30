@@ -97,7 +97,7 @@ function underch.functions.get_biome(darkness, water, pressure, y)
 	elseif y < underch.common_floor / 4 then
 		darkness = math.floor((darkness + 1)*1.5)
 		water = math.floor((water + 1)*1.5)
-		biome = underch.functions.correct_biome(16 + pressure + water*3 + darkness, 43)
+		biome = underch.functions.correct_biome(18 + pressure + water*3 + darkness, 43)
 	else
 		darkness = math.floor((darkness + 1)*2)
 		water = math.floor((water + 1)*2)

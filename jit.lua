@@ -174,130 +174,129 @@ underch.jit.biomegen = {
 	[16] = function(pos)
 		underch.jit.use_stone(pos, "gabbro")
 	end,
-	--dust
+	--marble
 	[17] = function(pos)
+		underch.jit.use_stone(pos, "marble")
+	end,
+	--peridotite
+	[18] = function(pos)
+		underch.jit.use_stone(pos, "peridotite")
+	end,
+	--dolomite + mould
+	[19] = function(pos)
+		underch.jit.use_stone(pos, "dolomite")
+	end,
+	--quartzite + mould
+	[20] = function(pos)
+		underch.jit.use_stone(pos, "quartzite")
+	end,
+	--slate + mould
+	[21] = function(pos)
+		underch.jit.use_stone(pos, "slate")
+	end,
+	--aplite + mould
+	[22] = function(pos)
+		underch.jit.use_stone(pos, "aplite")
+	end,
+	--dust
+	[23] = function(pos)
 		underch.jit.use_stone(pos, "limestone")
 	end,
 	--coal
-	[18] = function(pos)
+	[24] = function(pos)
 		underch.jit.use_stone(pos, "amphibolite")
 		underch.jit.ore(pos, "underch:amphibolite", "underch:amphibolite_coal_dense_ore", 1/201)
 	end,
-	--fungi
-	[19] = function(pos)
-		underch.jit.use_stone(pos, "phylite")
-	end,
 	--torchberries
-	[20] = function(pos)
+	[25] = function(pos)
 		underch.jit.use_stone(pos, "phonolite")
 	end,
 	--tubers
-	[21] = function(pos)
+	[26] = function(pos)
 		underch.jit.use_stone(pos, "schist")
 		underch.jit.ore(pos, "underch:schist", "underch:schist_coal_dense_ore", 1/201)
 	end,
 	--quartz
-	[22] = function(pos)
+	[27] = function(pos)
 		underch.jit.use_stone(pos, "diorite")
 		underch.jit.ore(pos, "underch:diorite", "underch:quartz_ore", 1/50)
 	end,
 	--emerald
-	[23] = function(pos)
+	[28] = function(pos)
 		underch.jit.use_stone(pos, "phonolite")
 		underch.jit.ore(pos, "underch:phonolite", "underch:emerald_ore", 1/201)
 	end,
 	--moss
-	[24] = function(pos)
+	[29] = function(pos)
 		underch.jit.use_stone(pos, "basalt")
 		underch.jit.ore(pos, "underch:basalt_cobble", "underch:basalt_mossy_cobble", 3/4)
 	end,
 	--torchberries + jungle
-	[25] = function(pos)
+	[30] = function(pos)
 		underch.jit.use_stone(pos, "granite")
 		underch.jit.blob(pos, -31000, 31000, "underch:granite", "underch:mossy_dirt", 0.5, 17, 18, 19)
 --		underch.jit.ore(vi, data, underch.stone.defs["granite"].base, c_dynamic_mossy_dirt, 1/100)
 	end,
 	--jungle
-	[26] = function(pos)
+	[31] = function(pos)
 		underch.jit.use_stone(pos, "andesite")
 --		underch.jit.ore(vi, data, underch.stone.defs["andesite"].base, c_dynamic_jungle, 1/100)
 	end,
-	--lava springs
-	[27] = function(pos)
+	--marble + mould
+	[32] = function(pos)
 		underch.jit.use_stone(pos, "marble")
 	end,
-	--flames
-	[28] = function(pos)
-		underch.jit.use_stone(pos, "phonolite")
-	end,
 	--fiery vines
-	[29] = function(pos)
+	[33] = function(pos)
 		underch.jit.use_stone(pos, "schist")
 	end,
 	--fungi 2
-	[30] = function(pos)
+	[34] = function(pos)
 		underch.jit.use_stone(pos, "phylite")
 	end,
 	--fiery fungi
-	[31] = function(pos)
+	[35] = function(pos)
 		underch.jit.use_stone(pos, "pegmatite")
 	end,
 	--mese + saphire
-	[32] = function(pos)
+	[36] = function(pos)
 		underch.jit.use_stone(pos, "gneiss")
 		underch.jit.ore(pos, "underch:gneiss", "underch:saphire_ore", 1/201)
+		underch.jit.ore(pos, "underch:gneiss", "underch:gneiss_copper_dense_ore", 1/201)
 	end,
 	--ruby
-	[33] = function(pos)
+	[37] = function(pos)
 		underch.jit.use_stone(pos, "granite")
 		underch.jit.ore(pos, "underch:granite", "underch:ruby_ore", 1/201)
+		underch.jit.ore(pos, "underch:granite", "underch:granite_iron_dense_ore", 1/207)
 	end,
 	--sticks
-	[34] = function(pos)
+	[38] = function(pos)
 		underch.jit.use_stone(pos, "basalt")
 --		underch.jit.ore(vi, data, underch.stone.defs["basalt"].base, c_dynamic_sticks, 1/200)
+		underch.jit.ore(pos, "underch:basalt", "underch:basalt_gold_dense_ore", 1/407)
 	end,
 	--aquamarine + amethyst
-	[35] = function(pos)
+	[39] = function(pos)
 		underch.jit.use_stone(pos, "diorite")
 		underch.jit.ore(pos, "underch:diorite", "underch:aquamarine_ore", 1/50)
 		underch.jit.ore(pos, "underch:diorite", "underch:amethyst_ore", 1/50)
 	end,
 	--fiery vines + jungle
-	[36] = function(pos)
+	[40] = function(pos)
 		underch.jit.use_stone(pos, "andesite")
 --		underch.jit.ore(pos, "underch:andesite", c_dynamic_jungle, 1/100)
 	end,
-	--lava + jungle
-	[37] = function(pos)
+	--jungle
+	[41] = function(pos)
 		underch.jit.use_stone(pos, "gabbro")
 --		underch.jit.ore(vi, data, underch.stone.defs["gabbro"].base, c_dynamic_jungleg, 1/100)
 	end,
-	--copper
-	[38] = function(pos)
-		underch.jit.use_stone(pos, "gneiss")
-		underch.jit.ore(pos, "underch:gneiss", "underch:gneiss_copper_dense_ore", 1/201)
-	end,
-	--gold
-	[39] = function(pos)
-		underch.jit.use_stone(pos, "basalt")
-		underch.jit.ore(pos, "underch:basalt", "underch:basalt_gold_dense_ore", 1/407)
-	end,
-	--iron
-	[40] = function(pos)
-		underch.jit.use_stone(pos, "granite")
-		underch.jit.ore(pos, "underch:granite", "underch:granite_iron_dense_ore", 1/207)
-	end,
-	--malachite
-	[41] = function(pos)
+	--malachite + basalt
+	[42] = function(pos)
 		underch.jit.use_stone(pos, "peridotite")
 		underch.jit.blob(pos, -31000, 31000, "underch:peridotite", "underch:malachite", 0.2, 17, 18, 19)
 --		underch.jit.ore(pos, "underch:peridotite", c_dynamic_malachite, 1/300)
-	end,
-	--basalt
-	[42] = function(pos)
-		underch.jit.use_stone(pos, "peridotite")
---		underch.jit.ore(pos, "underch:peridotite", c_dynamic_basalt, 1/200)
 	end,
 	--sichamine
 	[43] = function(pos)
@@ -313,91 +312,68 @@ underch.jit.biomegen = {
 	[45] = function(pos)
 		underch.jit.use_stone(pos, "omphyrite")
 	end,
-	--hot water
-	[46] = function(pos)
-		underch.jit.use_stone(pos, "sichamine")
-		underch.jit.ore(pos, "underch:sichamine", "underch:sichamine_lamp", 1/25)
-		underch.jit.ore(pos, "underch:sichamine", "underch:hektorite", 1/50)
-	end,
 	--lava cracks
-	[47] = function(pos)
+	[46] = function(pos)
 		underch.jit.use_stone(pos, "omphyrite")
 		underch.jit.ore(pos, "underch:omphyrite", "underch:lava_crack", 1/18)
 	end,
-	--quartz + water
+	--emutite
+	[47] = function(pos)
+		underch.jit.use_stone(pos, "emutite")
+	end,
+	--hektorite + shinestone
 	[48] = function(pos)
+		underch.jit.use_stone(pos, "hektorite")
+	end,
+	--afualite + diamonds + obsidian
+	[49] = function(pos)
+		underch.jit.use_stone(pos, "afualite")
+--		underch.jit.ore(pos, "underch:afualite"].base, c_dynamic_vindesite, 1/300)
+--		underch.jit.ore(pos, "underch:afualite"].base, c_dynamic_dark_vindesite, 1/300)
+		underch.jit.ore(pos, "underch:afualite", "default:coalblock", 1/18)
+		underch.jit.ore(pos, "default:coalblock", "underch:coal_diamond", 1/72)
+		underch.jit.blob(pos, -31000, 31000, "underch:afualite", "underch:vindesite", 0.5, 17, 18, 19)
+		underch.jit.blob(pos, -31000, 31000, "underch:afualite", "underch:dark_vindesite", 0.5, 19, 17, 18)
+	end,
+	--quartz
+	[50] = function(pos)
 		underch.jit.use_stone(pos, "sichamine")
 		underch.jit.replace(pos, "underch:sichamine", "underch:quartz_block")
 		underch.jit.ore(pos, "underch:quartz_block", "underch:aquamarine_block", 1/4)
 		underch.jit.ore(pos, "underch:quartz_block", "underch:amethyst_block", 1/3)
 		underch.jit.ore(pos, "underch:quartz_block", "underch:sichamine_lamp", 1/25)
 	end,
-	--lava
-	[49] = function(pos)
-		underch.jit.use_stone(pos, "emutite")
-	end,
-	--vindesite
-	[50] = function(pos)
-		underch.jit.use_stone(pos, "vindesite")
-		underch.jit.ore(pos, "underch:vindesite", "underch:vindesite_quartz_ore", 1/50)
-	end,
-	--black slime
-	[51] = function(pos)
-		underch.jit.use_stone(pos, "slate")
-		underch.jit.blob(pos, -31000, 31000, "underch:slate", "underch:black_slimy_block", 0.7, 17, 18, 19)
-		underch.jit.ore(pos, "underch:black_slimy_block", "underch:black_eye_ore", 1/10)
-	end,
 	--green slime
-	[52] = function(pos)
+	[51] = function(pos)
 		underch.jit.use_stone(pos, "green_slimestone")
 		underch.jit.blob(pos, -31000, 31000, "underch:green_slimestone", "underch:green_slimy_block", 0.7, 17, 18, 19)
 		underch.jit.ore(pos, "underch:green_slimy_block", "underch:green_eye_ore", 1/10)
 --		underch.jit.ore(pos, underch.stone.defs["green_slimestone"].base, c_green_slimy_block, 1/1000)
 	end,
-	--darkness
-	[53] = function(pos)
-		underch.jit.use_stone(pos, "dark_vindesite")
-		underch.jit.ore(pos, "underch:dark_vindesite", "underch:burner", 1/15)
-	end,
 	--purple slime
-	[54] = function(pos)
+	[52] = function(pos)
 		underch.jit.use_stone(pos, "purple_slimestone")
 		underch.jit.blob(pos, -31000, 31000, "underch:purple_slimestone", "underch:purple_slimy_block", 0.7, 17, 18, 19)
 		underch.jit.ore(pos, "underch:purple_slimy_block", "underch:purple_eye_ore", 1/10)
 	end,
 	--red slime
-	[55] = function(pos)
+	[53] = function(pos)
 		underch.jit.use_stone(pos, "red_slimestone")
 		underch.jit.blob(pos, -31000, 31000, "underch:red_slimestone", "underch:red_slimy_block", 0.7, 17, 18, 19)
 		underch.jit.ore(pos, "underch:red_slimy_block", "underch:red_eye_ore", 1/10)
 --		underch.jit.ore(vi, data, underch.stone.defs["red_slimestone"].base, c_red_slimy_block, 1/300)
 	end,
-	--diamonds
-	[56] = function(pos)
-		underch.jit.use_stone(pos, "afualite")
-		underch.jit.ore(pos, "underch:afualite", "default:coalblock", 1/18)
-		underch.jit.ore(pos, "default:coalblock", "underch:coal_diamond", 1/72)
+	--vindesite
+	[54] = function(pos)
+		underch.jit.use_stone(pos, "vindesite")
+		underch.jit.ore(pos, "underch:vindesite", "underch:vindesite_quartz_ore", 1/50)
 	end,
-	--vindesite + lava
-	[57] = function(pos)
-		underch.jit.use_stone(pos, "afualite")
-		underch.jit.blob(pos, -31000, 31000, "underch:afualite", "underch:vindesite", 0.5, 17, 18, 19)
-		underch.jit.blob(pos, -31000, 31000, "underch:afualite", "underch:dark_vindesite", 0.5, 19, 17, 18)
---		underch.jit.ore(pos, "underch:afualite"].base, c_dynamic_vindesite, 1/300)
---		underch.jit.ore(pos, "underch:afualite"].base, c_dynamic_dark_vindesite, 1/300)
-	end,
-	--hektorite + lava
-	[58] = function(pos)
-		underch.jit.use_stone(pos, "hektorite")
-	end,
-	--shinestone
-	[59] = function(pos)
-		underch.jit.use_stone(pos, "hektorite")
-	end,
-	--obsidian
-	[60] = function(pos)
-		underch.jit.use_stone(pos, "afualite")
---		underch.jit.ore(vi, data, underch.stone.defs["afualite"].base, c_dynamic_obsidian, 1/20)
+	--darkness
+	[55] = function(pos)
+		underch.jit.use_stone(pos, "dark_vindesite")
+		underch.jit.ore(pos, "underch:dark_vindesite", "underch:burner", 1/15)
+		underch.jit.blob(pos, -31000, 31000, "underch:dark_vindesite", "underch:black_slimy_block", 0.7, 17, 18, 19)
+		underch.jit.ore(pos, "underch:black_slimy_block", "underch:black_eye_ore", 1/10)
 	end,
 }
 
