@@ -129,7 +129,7 @@ minetest.register_node("underch:lava_crack", {
 	light_source = 12,
 	sounds = default.node_sound_stone_defaults(),
 	after_dig_node = function(pos, oldnode, oldmetadata, digger)
-		minetest.place_node(pos, {name="default:lava_source"}, digger)
+		minetest.place_node(pos, {name="fire:permanent_flame"}, digger)
 		underch.jit.dig_shadow(pos, oldnode, oldmetadata, digger)
 	end,
 })

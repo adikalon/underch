@@ -16,49 +16,49 @@ end
 
 
 function underch.functions.get_pressure(h, r)
-	local x = h / -1000
+	-- local x = h / -1000
 	r = (r+1);
 	-- Some precalculated magic numbers
 	local top = 0
-	local bottom = 0
-	if x < 12 then
-		if x < 0 then
-			top = 0.01075*x - 0.66667
-		else
-			if x < 2 then
-				top = 0.16667*x - 0.66667
-			else
-				top = 0.03333*x - 0.4
-			end
-		end
-	else
-		if x < 25 then
-			if x < 20 then
-				top = 0.04167*x - 0.5
-			else
-				top = 0.06667*x - 1
-			end
-		else
-			top = 0.05556*x - 0.72222
-		end
-	end
-	if x < 20 then
-		if x < 0.2 then
-			bottom = 0.01068*x - 0.6688
-		else
-			if x < 10 then
-				bottom = 0.03401*x - 0.67347
-			else
-				bottom = 0.03333*x - 0.66667
-			end
-		end
-	else
-		if x < 25 then
-			bottom = 0.06667*x - 1.33333
-		else
-			bottom = 0.05556*x - 1.05556
-		end
-	end
+	local bottom = underch.common_floor
+	-- if x < 12 then
+	-- 	if x < 0 then
+	-- 		top = 0.01075*x - 0.66667
+	-- 	else
+	-- 		if x < 2 then
+	-- 			top = 0.16667*x - 0.66667
+	-- 		else
+	-- 			top = 0.03333*x - 0.4
+	-- 		end
+	-- 	end
+	-- else
+	-- 	if x < 25 then
+	-- 		if x < 20 then
+	-- 			top = 0.04167*x - 0.5
+	-- 		else
+	-- 			top = 0.06667*x - 1
+	-- 		end
+	-- 	else
+	-- 		top = 0.05556*x - 0.72222
+	-- 	end
+	-- end
+	-- if x < 20 then
+	-- 	if x < 0.2 then
+	-- 		bottom = 0.01068*x - 0.6688
+	-- 	else
+	-- 		if x < 10 then
+	-- 			bottom = 0.03401*x - 0.67347
+	-- 		else
+	-- 			bottom = 0.03333*x - 0.66667
+	-- 		end
+	-- 	end
+	-- else
+	-- 	if x < 25 then
+	-- 		bottom = 0.06667*x - 1.33333
+	-- 	else
+	-- 		bottom = 0.05556*x - 1.05556
+	-- 	end
+	-- end
 	local pressure = (r*top + (1-r)*bottom)*2
 	if h > 0 then
 		pressure = math.min(pressure, -0.8)
@@ -81,28 +81,30 @@ if underch.polynomial_pressure then
 	end
 end
 
-function underch.functions.get_biome(darkness, water, pressure)
+function underch.functions.get_biome(darkness, water, pressure, y)
 	darkness = math.min(math.max(darkness, -0.999), 0.999)
 	water = math.min(math.max(water, -0.999), 0.999)
 	pressure = math.floor(math.min(math.max((pressure + 1)*3, 0), 5))
+	-- minetest.chat_send_all("Pressure: " .. pressure)
+	biome = 1
 
 	--print("" + darkness + " " + water + " " + pressure)
 
-	if pressure < 3 then
-		darkness = math.floor((darkness + 1)*2)
-		water = math.floor((water + 1)*2)
-		return pressure*16 + water*4 + darkness
-	elseif pressure == 3 then
-		darkness = math.floor((darkness + 1)*1.5)
-		water = math.floor((water + 1)*1.5)
-		return 47 + water*3 + darkness
-	elseif pressure == 4 then
+	if y < underch.common_floor / 4 * 3 then
 		darkness = math.floor(darkness + 1)
 		water = math.floor(water + 1)
-		return 56 + water*2 + darkness
+		biome = underch.functions.correct_biome(42 + pressure + water*2 + darkness, 60)
+	elseif y < underch.common_floor / 4 then
+		darkness = math.floor((darkness + 1)*1.5)
+		water = math.floor((water + 1)*1.5)
+		biome = underch.functions.correct_biome(16 + pressure + water*3 + darkness, 43)
 	else
-		return 60
+		darkness = math.floor((darkness + 1)*2)
+		water = math.floor((water + 1)*2)
+		biome = underch.functions.correct_biome(0 + pressure + water*4 + darkness, 16)
 	end
+
+	return biome
 end
 
 function underch.functions.replace(vi, data, def1, def2)
@@ -292,26 +294,6 @@ function underch.functions.register_stairs(id_, groups_, texture_, name_, sounds
 	elseif underch.have_stairs then
 		stairs.register_stair_and_slab(id_, "underch:" .. id_, groups_, texture_, names_.stair, names_.slab, sounds_, true, names_.inner, names_.outer)
 	end
-end
-
-function underch.functions.pressure_multiplier(y)
-	local pressure = 1
-
-	if y <= -2000 then
-		local m = math.floor(y / 1000)
-
-		if m < 0 then
-			m = m * -1
-		end
-
-		if m > 4 then
-			m = 4
-		end
-
-		pressure = m
-	end
-
-	return pressure
 end
 
 function underch.functions.correct_biome(biome, total)

@@ -23,6 +23,24 @@ underch.have_magic_materials = minetest.get_modpath("magic_materials") ~= nil
 underch.use_jit = minetest.settings:get_bool("underch_ores_jit", false)
 underch.polynomial_pressure = minetest.settings:get_bool("underch_polynomial_pressure", false)
 
+underch.common_floor = -31000
+
+if minetest.get_modpath("nether") then
+	local n_height = nether.DEPTH_CEILING
+
+	if n_height > underch.common_floor then
+		underch.common_floor = n_height
+	end
+end
+
+if minetest.get_modpath("bedrock2") then
+	local br_height = tonumber(minetest.settings:get("bedrock2_y"))
+
+	if br_height > underch.common_floor then
+		underch.common_floor = br_height
+	end
+end
+
 dofile(underch.modpath .. "/dynamic.lua")
 dofile(underch.modpath .. "/functions.lua")
 
