@@ -1,3 +1,9 @@
+underch_y_level_1 (level 1 beginning) int 31000
+underch_y_level_2 (level 2 beginning) int -500
+underch_y_level_3 (level 3 beginning) int -8000
+underch_y_level_4 (level 4 beginning) int -9000
+underch_y_level_end (End of levels) int -10000
+
 # Ores-JIT makes the ores generate when they are exposed to a see-through block, reducing the size of map on disc. Before this option is used, all ore definitions registering ores in stone must be removed from all other mods manually. They would appear twice otherwise.
 underch_ores_jit (Use ores-JIT) bool false
 

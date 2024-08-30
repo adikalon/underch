@@ -436,21 +436,23 @@ function underch.jit.reveal(pos, recursive, crust)
 		underch.jit.scatter(pos, -31000, -28000, nil, "xtraores:stone_with_geminitinum", 220, 32, 33, 35)
 	end
 
-	local darkness = minetest.get_perlin(underch.np_darkness):get_3d(pos)
-	local water = minetest.get_perlin(underch.np_water):get_3d(pos)
-	local pressure = underch.functions.get_pressure(pos.y, minetest.get_perlin(underch.np_pressure):get_3d(pos))
+	if pos.y <= underch.levels.level_1 and pos.y >= underch.levels.level_end then
+		local darkness = minetest.get_perlin(underch.np_darkness):get_3d(pos)
+		local water = minetest.get_perlin(underch.np_water):get_3d(pos)
+		local pressure = underch.functions.get_pressure(pos.y, minetest.get_perlin(underch.np_pressure):get_3d(pos))
 
-	local biome = underch.functions.get_biome(darkness, water, presure, pos.y)
+		local biome = underch.functions.get_biome(darkness, water, presure, pos.y)
 
-	-- if (biome < 1) or (biome > 62) then
-	-- 	print(string.format("Wrong biome %i", biome))
-	-- 	biome = 1
-	-- end
+		-- if (biome < 1) or (biome > 62) then
+		-- 	print(string.format("Wrong biome %i", biome))
+		-- 	biome = 1
+		-- end
 
-	underch.jit.biomegen[biome](pos)
+		underch.jit.biomegen[biome](pos)
 
-	if recursive or (crust and underch.jit.gc(pos)) then
-		underch.jit.check_neighbours(pos, crust)
+		if recursive or (crust and underch.jit.gc(pos)) then
+			underch.jit.check_neighbours(pos, crust)
+		end
 	end
 
 	return true

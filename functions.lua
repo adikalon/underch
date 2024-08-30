@@ -20,7 +20,7 @@ function underch.functions.get_pressure(h, r)
 	r = (r+1);
 	-- Some precalculated magic numbers
 	local top = 0
-	local bottom = underch.common_floor
+	local bottom = underch.levels.level_end
 	-- if x < 12 then
 	-- 	if x < 0 then
 	-- 		top = 0.01075*x - 0.66667
@@ -90,18 +90,22 @@ function underch.functions.get_biome(darkness, water, pressure, y)
 
 	--print("" + darkness + " " + water + " " + pressure)
 
-	if y < underch.common_floor / 4 * 3 then
+	if y < underch.levels.level_4 then
+		darkness = math.floor(darkness)
+		water = math.floor(water)
+		biome = underch.functions.correct_biome(50 + pressure + water + darkness, 55)
+	elseif y < underch.levels.level_3 then
 		darkness = math.floor(darkness + 1)
 		water = math.floor(water + 1)
-		biome = underch.functions.correct_biome(42 + pressure + water*2 + darkness, 60)
-	elseif y < underch.common_floor / 4 then
+		biome = underch.functions.correct_biome(42 + pressure + water*2 + darkness, 50)
+	elseif y < underch.levels.level_2 then
 		darkness = math.floor((darkness + 1)*1.5)
 		water = math.floor((water + 1)*1.5)
-		biome = underch.functions.correct_biome(18 + pressure + water*3 + darkness, 43)
+		biome = underch.functions.correct_biome(18 + pressure + water*3 + darkness, 42)
 	else
 		darkness = math.floor((darkness + 1)*2)
 		water = math.floor((water + 1)*2)
-		biome = underch.functions.correct_biome(0 + pressure + water*4 + darkness, 16)
+		biome = underch.functions.correct_biome(0 + pressure + water*4 + darkness, 18)
 	end
 
 	return biome

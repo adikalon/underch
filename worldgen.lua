@@ -820,7 +820,10 @@ minetest.register_on_generated(function(minp, maxp, seed)
 				-- 	biome = 1
 				-- end
 
-				underch.biomegen[biome](x, y, z, vi, data, p2data, area, y == y1)
+				if y <= underch.levels.level_1 and y >= underch.levels.level_end then
+					underch.biomegen[biome](x, y, z, vi, data, p2data, area, y == y1)
+				end
+
 				if data[vi] == c_stone then
 					if underch.functions.is_crust(x, y, z, vi, area, data, c_stone) then
 						data[vi] = underch.c_crust

@@ -23,22 +23,32 @@ underch.have_magic_materials = minetest.get_modpath("magic_materials") ~= nil
 underch.use_jit = minetest.settings:get_bool("underch_ores_jit", false)
 underch.polynomial_pressure = minetest.settings:get_bool("underch_polynomial_pressure", false)
 
-underch.common_floor = -31000
+underch.levels = {
+	level_1 = tonumber(minetest.settings:get("underch_y_level_1")),
+	level_2 = tonumber(minetest.settings:get("underch_y_level_2")),
+	level_3 = tonumber(minetest.settings:get("underch_y_level_3")),
+	level_4 = tonumber(minetest.settings:get("underch_y_level_4")),
+	level_end = tonumber(minetest.settings:get("underch_y_level_end")),
+}
 
-if minetest.get_modpath("nether") then
-	local n_height = nether.DEPTH_CEILING
-
-	if n_height > underch.common_floor then
-		underch.common_floor = n_height
-	end
+if underch.levels.level_1 == nil then
+	underch.levels.level_1 = 31000
 end
 
-if minetest.get_modpath("bedrock2") then
-	local br_height = tonumber(minetest.settings:get("bedrock2_y"))
+if underch.levels.level_2 == nil then
+	underch.levels.level_2 = -500
+end
 
-	if br_height > underch.common_floor then
-		underch.common_floor = br_height
-	end
+if underch.levels.level_3 == nil then
+	underch.levels.level_3 = -8000
+end
+
+if underch.levels.level_4 == nil then
+	underch.levels.level_4 = -9000
+end
+
+if underch.levels.level_end == nil then
+	underch.levels.level_end = -10000
 end
 
 dofile(underch.modpath .. "/dynamic.lua")
