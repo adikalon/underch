@@ -20,7 +20,7 @@ function underch.functions.get_pressure(h, r)
 	r = (r+1);
 	-- Some precalculated magic numbers
 	local top = 0
-	local bottom = underch.levels.level_end
+	local bottom = underch.layers.layer_end
 	-- if x < 12 then
 	-- 	if x < 0 then
 	-- 		top = 0.01075*x - 0.66667
@@ -90,22 +90,22 @@ function underch.functions.get_biome(darkness, water, pressure, y)
 
 	--print("" + darkness + " " + water + " " + pressure)
 
-	if y < underch.levels.level_4 then
+	if y < underch.layers.layer_4 then
 		darkness = math.floor(darkness)
 		water = math.floor(water)
-		biome = underch.functions.correct_biome(50 + pressure + water + darkness, 55)
-	elseif y < underch.levels.level_3 then
+		biome = underch.functions.correct_biome(50 + pressure + water + darkness, 55, 18)
+	elseif y < underch.layers.layer_3 then
 		darkness = math.floor(darkness + 1)
 		water = math.floor(water + 1)
-		biome = underch.functions.correct_biome(42 + pressure + water*2 + darkness, 50)
-	elseif y < underch.levels.level_2 then
+		biome = underch.functions.correct_biome(42 + pressure + water*2 + darkness, 50, 18)
+	elseif y < underch.layers.layer_2 then
 		darkness = math.floor((darkness + 1)*1.5)
 		water = math.floor((water + 1)*1.5)
-		biome = underch.functions.correct_biome(18 + pressure + water*3 + darkness, 42)
+		biome = underch.functions.correct_biome(18 + pressure + water*3 + darkness, 42, 18)
 	else
 		darkness = math.floor((darkness + 1)*2)
 		water = math.floor((water + 1)*2)
-		biome = underch.functions.correct_biome(0 + pressure + water*4 + darkness, 18)
+		biome = underch.functions.correct_biome(0 + pressure + water*4 + darkness, 18, 0)
 	end
 
 	return biome
@@ -300,33 +300,33 @@ function underch.functions.register_stairs(id_, groups_, texture_, name_, sounds
 	end
 end
 
-function underch.functions.correct_biome(biome, total)
+function underch.functions.correct_biome(biome, total, skip)
 	if biome == 0 then
 		return total
 	end
 
 	if biome < 0 then
 		if (biome * -1) > total then
-			local i = (biome * -1) % total
+			local i = (biome * -1) % (total - skip)
 
 			if i == 0 then
 				return total
 			end
 
-			return total + (i * -1)
+			return total + ((i + skip) * -1)
 		end
 
 		return total + (biome * -1)
 	end
 
 	if biome > total then
-		local i = biome % total
+		local i = biome % (total - skip)
 
 		if i == 0 then
 			return total
 		end
 
-		return i
+		return i + skip
 	end
 
 	return biome

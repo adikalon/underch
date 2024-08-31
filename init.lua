@@ -23,32 +23,32 @@ underch.have_magic_materials = minetest.get_modpath("magic_materials") ~= nil
 underch.use_jit = minetest.settings:get_bool("underch_ores_jit", false)
 underch.polynomial_pressure = minetest.settings:get_bool("underch_polynomial_pressure", false)
 
-underch.levels = {
-	level_1 = tonumber(minetest.settings:get("underch_y_level_1")),
-	level_2 = tonumber(minetest.settings:get("underch_y_level_2")),
-	level_3 = tonumber(minetest.settings:get("underch_y_level_3")),
-	level_4 = tonumber(minetest.settings:get("underch_y_level_4")),
-	level_end = tonumber(minetest.settings:get("underch_y_level_end")),
+underch.layers = {
+	layer_1 = tonumber(minetest.settings:get("underch_y_layer_1")),
+	layer_2 = tonumber(minetest.settings:get("underch_y_layer_2")),
+	layer_3 = tonumber(minetest.settings:get("underch_y_layer_3")),
+	layer_4 = tonumber(minetest.settings:get("underch_y_layer_4")),
+	layer_end = tonumber(minetest.settings:get("underch_y_layer_end")),
 }
 
-if underch.levels.level_1 == nil then
-	underch.levels.level_1 = 31000
+if underch.layers.layer_1 == nil then
+	underch.layers.layer_1 = 31000
 end
 
-if underch.levels.level_2 == nil then
-	underch.levels.level_2 = -500
+if underch.layers.layer_2 == nil then
+	underch.layers.layer_2 = -500
 end
 
-if underch.levels.level_3 == nil then
-	underch.levels.level_3 = -8000
+if underch.layers.layer_3 == nil then
+	underch.layers.layer_3 = -8000
 end
 
-if underch.levels.level_4 == nil then
-	underch.levels.level_4 = -9000
+if underch.layers.layer_4 == nil then
+	underch.layers.layer_4 = -9000
 end
 
-if underch.levels.level_end == nil then
-	underch.levels.level_end = -10000
+if underch.layers.layer_end == nil then
+	underch.layers.layer_end = -10000
 end
 
 dofile(underch.modpath .. "/dynamic.lua")

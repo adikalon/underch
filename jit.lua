@@ -436,7 +436,7 @@ function underch.jit.reveal(pos, recursive, crust)
 		underch.jit.scatter(pos, -31000, -28000, nil, "xtraores:stone_with_geminitinum", 220, 32, 33, 35)
 	end
 
-	if pos.y <= underch.levels.level_1 and pos.y >= underch.levels.level_end then
+	if pos.y <= underch.layers.layer_1 and pos.y >= underch.layers.layer_end then
 		local darkness = minetest.get_perlin(underch.np_darkness):get_3d(pos)
 		local water = minetest.get_perlin(underch.np_water):get_3d(pos)
 		local pressure = underch.functions.get_pressure(pos.y, minetest.get_perlin(underch.np_pressure):get_3d(pos))

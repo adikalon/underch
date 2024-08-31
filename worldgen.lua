@@ -820,7 +820,7 @@ minetest.register_on_generated(function(minp, maxp, seed)
 				-- 	biome = 1
 				-- end
 
-				if y <= underch.levels.level_1 and y >= underch.levels.level_end then
+				if y <= underch.layers.layer_1 and y >= underch.layers.layer_end then
 					underch.biomegen[biome](x, y, z, vi, data, p2data, area, y == y1)
 				end
 
