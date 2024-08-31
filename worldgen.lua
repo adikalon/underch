@@ -277,7 +277,7 @@ if underch.use_jit then
 		end,
 		--jungle
 		[31] = function(x, y, z, vi, data, p2data, area, lastlayer)
-			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_jungle, 1/50)
+			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_jungle, 1/1050)
 			underch.functions.on_wall_w(x, y, z, vi, area, data, p2data, c_stone, c_air, c_mould, 1/9, lastlayer)
 			underch.functions.on_wall_w(x, y, z, vi, area, data, p2data, c_stone, c_air, c_underground_vine, 1/15, lastlayer)
 		end,
@@ -287,7 +287,7 @@ if underch.use_jit then
 		end,
 		--fiery vines
 		[33] = function(x, y, z, vi, data, p2data, area, lastlayer)
-			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_fs, 1/300)
+			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_fs, 1/1300)
 			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_coal_dust, 1/9)
 			underch.functions.on_wall_w(x, y, z, vi, area, data, p2data, c_stone, c_air, c_fiery_vine, 1/15, lastlayer)
 		end,
@@ -301,7 +301,7 @@ if underch.use_jit then
 		end,
 		--fiery fungi
 		[35] = function(x, y, z, vi, data, p2data, area, lastlayer)
-			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_fp, 1/300)
+			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_fp, 1/1300)
 			underch.functions.on_wall_w(x, y, z, vi, area, data, p2data, c_stone, c_air, c_fiery_vine, 1/15, lastlayer)
 			underch.functions.on_floor(x, y, z, vi, area, data, c_stone, c_air, c_burning_mushroom, 1/18)
 			underch.functions.on_floor(x, y, z, vi, area, data, c_stone, c_air, c_orange_mushroom, 1/18)
@@ -324,7 +324,7 @@ if underch.use_jit then
 			underch.functions.on_wall_w(x, y, z, vi, area, data, p2data, c_stone, c_air, c_dry_moss, 1/3, lastlayer)
 			underch.functions.on_wall_w(x, y, z, vi, area, data, p2data, c_dirt, c_air, c_dry_moss, 1/3, lastlayer)
 			underch.functions.on_floor(x, y, z, vi, area, data, c_stone, c_air, c_orange_mushroom, 1/18)
-			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_sticks, 1/100)
+			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_sticks, 1/1100)
 		end,
 		--aquamarine + amethyst
 		[39] = function(x, y, z, vi, data, p2data, area, lastlayer)
@@ -333,8 +333,8 @@ if underch.use_jit then
 		end,
 		--fiery vines + jungle
 		[40] = function(x, y, z, vi, data, p2data, area, lastlayer)
-			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_jungle, 1/50)
-			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_fa, 1/300)
+			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_jungle, 1/1050)
+			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_fa, 1/1300)
 			underch.functions.on_wall_w(x, y, z, vi, area, data, p2data, c_stone, c_air, c_fiery_vine, 1/15, lastlayer)
 			underch.functions.on_floor(x, y, z, vi, area, data, c_stone, c_air, c_red_mushroom, 1/27)
 			underch.functions.on_floor(x, y, z, vi, area, data, c_stone, c_air, c_brown_mushroom, 1/27)
@@ -342,7 +342,7 @@ if underch.use_jit then
 		end,
 		--jungle
 		[41] = function(x, y, z, vi, data, p2data, area, lastlayer)
-			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_jungleg, 1/50)
+			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_jungleg, 1/1050)
 			underch.functions.on_floor(x, y, z, vi, area, data, c_stone, c_air, c_burning_mushroom, 1/18)
 			underch.functions.on_floor(x, y, z, vi, area, data, c_stone, c_air, c_orange_mushroom, 1/18)
 			underch.functions.on_wall_w(x, y, z, vi, area, data, p2data, c_stone, c_air, c_underground_vine, 1/15, lastlayer)
@@ -350,7 +350,7 @@ if underch.use_jit then
 		--malachite + basalt
 		[42] = function(x, y, z, vi, data, p2data, area, lastlayer)
 			underch.functions.on_floor(x, y, z, vi, area, data, c_stone, c_air, c_burning_mushroom, 1/18)
-			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_basalt, 1/200)
+			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_basalt, 1/1200)
 		end,
 		--sichamine
 		[43] = do_nothing,
@@ -358,7 +358,7 @@ if underch.use_jit then
 		[44] = do_nothing,
 		--omphyrite
 		[45] = function(x, y, z, vi, data, p2data, area, lastlayer)
-			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_fo, 1/300)
+			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_fo, 1/1300)
 			underch.functions.on_floor(x, y, z, vi, area, data, c_stone, c_air, c_burning_mushroom, 1/18)
 		end,
 		--lava cracks
@@ -367,11 +367,11 @@ if underch.use_jit then
 		[47] = do_nothing,
 		--hektorite + shinestone
 		[48] = function(x, y, z, vi, data, p2data, area, lastlayer)
-			underch.functions.on_roof(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_shinestone, 1/50, lastlayer)
+			underch.functions.on_roof(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_shinestone, 1/1050, lastlayer)
 		end,
 		--afualite + diamonds + obsidian
 		[49] = function(x, y, z, vi, data, p2data, area, lastlayer)
-			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_obsidian, 1/20)
+			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_obsidian, 1/1020)
 		end,
 		--quartz
 		[50] = do_nothing,
@@ -549,12 +549,12 @@ else
 		[30] = function(x, y, z, vi, data, p2data, area, lastlayer)
 			underch.use_stone(vi, data, "granite")
 			underch.functions.on_roof(x, y, z, vi, area, data, c_stone, c_air, c_torchberries, 1/30, lastlayer, underch.stone.defs["granite"].base)
-			underch.functions.ore(vi, data, underch.stone.defs["granite"].base, c_dynamic_mossy_dirt, 1/100)
+			underch.functions.ore(vi, data, underch.stone.defs["granite"].base, c_dynamic_mossy_dirt, 1/1100)
 		end,
 		--jungle
 		[31] = function(x, y, z, vi, data, p2data, area, lastlayer)
 			underch.use_stone(vi, data, "andesite")
-			underch.functions.ore(vi, data, underch.stone.defs["andesite"].base, c_dynamic_jungle, 1/100)
+			underch.functions.ore(vi, data, underch.stone.defs["andesite"].base, c_dynamic_jungle, 1/1100)
 			underch.functions.on_wall_w(x, y, z, vi, area, data, p2data, c_stone, c_air, c_mould, 1/9, lastlayer, underch.stone.defs["andesite"].base)
 			underch.functions.on_wall_w(x, y, z, vi, area, data, p2data, c_stone, c_air, c_underground_vine, 1/15, lastlayer, underch.stone.defs["andesite"].base)
 		end,
@@ -566,7 +566,7 @@ else
 		--fiery vines
 		[33] = function(x, y, z, vi, data, p2data, area, lastlayer)
 			underch.use_stone(vi, data, "schist")
-			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_fs, 1/300, underch.stone.defs["schist"].base)
+			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_fs, 1/1300, underch.stone.defs["schist"].base)
 			--underch.functions.ore(vi, data, underch.stone.defs["schist"].base, c_fiery_dust, 1/9)
 			--underch.functions.ore(vi, data, underch.stone.defs["schist"].base, c_coal_dust, 1/9)
 			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_coal_dust, 1/9, underch.stone.defs["schist"].base)
@@ -584,7 +584,7 @@ else
 		--fiery fungi
 		[35] = function(x, y, z, vi, data, p2data, area, lastlayer)
 			underch.use_stone(vi, data, "pegmatite")
-			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_fp, 1/300, underch.stone.defs["pegmatite"].base)
+			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_fp, 1/1300, underch.stone.defs["pegmatite"].base)
 			--underch.functions.ore(vi, data, c_stone, c_fiery_dust, 1/23)
 			underch.functions.on_wall_w(x, y, z, vi, area, data, p2data, c_stone, c_air, c_fiery_vine, 1/15, lastlayer, underch.stone.defs["pegmatite"].base)
 			underch.functions.on_floor(x, y, z, vi, area, data, c_stone, c_air, c_burning_mushroom, 1/18, underch.stone.defs["pegmatite"].base)
@@ -615,7 +615,7 @@ else
 			underch.functions.on_wall_w(x, y, z, vi, area, data, p2data, c_stone, c_air, c_dry_moss, 1/3, lastlayer, underch.stone.defs["basalt"].base)
 			underch.functions.on_wall_w(x, y, z, vi, area, data, p2data, c_dirt, c_air, c_dry_moss, 1/3, lastlayer)
 			underch.functions.on_floor(x, y, z, vi, area, data, c_stone, c_air, c_orange_mushroom, 1/18, underch.stone.defs["basalt"].base)
-			underch.functions.ore(vi, data, underch.stone.defs["basalt"].base, c_dynamic_sticks, 1/200)
+			underch.functions.ore(vi, data, underch.stone.defs["basalt"].base, c_dynamic_sticks, 1/1200)
 			underch.functions.ore(vi, data, underch.stone.defs["basalt"].base, c_basalt_gold_dense_ore, 1/407)
 		end,
 		--aquamarine + amethyst
@@ -629,9 +629,9 @@ else
 		--fiery vines + jungle
 		[40] = function(x, y, z, vi, data, p2data, area, lastlayer)
 			underch.use_stone(vi, data, "andesite")
-			underch.functions.ore(vi, data, underch.stone.defs["andesite"].base, c_dynamic_jungle, 1/100)
+			underch.functions.ore(vi, data, underch.stone.defs["andesite"].base, c_dynamic_jungle, 1/1100)
 			--underch.functions.ore(vi, data, underch.stone.defs["andesite"].base, c_fiery_dust, 1/9)
-			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_fa, 1/300, underch.stone.defs["andesite"].base)
+			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_fa, 1/1300, underch.stone.defs["andesite"].base)
 			underch.functions.on_wall_w(x, y, z, vi, area, data, p2data, c_stone, c_air, c_fiery_vine, 1/15, lastlayer, underch.stone.defs["andesite"].base)
 			underch.functions.on_floor(x, y, z, vi, area, data, c_stone, c_air, c_red_mushroom, 1/27, underch.stone.defs["andesite"].base)
 			underch.functions.on_floor(x, y, z, vi, area, data, c_stone, c_air, c_brown_mushroom, 1/27, underch.stone.defs["andesite"].base)
@@ -640,7 +640,7 @@ else
 		--jungle
 		[41] = function(x, y, z, vi, data, p2data, area, lastlayer)
 			underch.use_stone(vi, data, "gabbro")
-			underch.functions.ore(vi, data, underch.stone.defs["gabbro"].base, c_dynamic_jungleg, 1/100)
+			underch.functions.ore(vi, data, underch.stone.defs["gabbro"].base, c_dynamic_jungleg, 1/1100)
 			underch.functions.on_floor(x, y, z, vi, area, data, c_stone, c_air, c_burning_mushroom, 1/18, underch.stone.defs["gabbro"].base)
 			underch.functions.on_floor(x, y, z, vi, area, data, c_stone, c_air, c_orange_mushroom, 1/18, underch.stone.defs["gabbro"].base)
 			underch.functions.on_wall_w(x, y, z, vi, area, data, p2data, c_stone, c_air, c_underground_vine, 1/15, lastlayer, underch.stone.defs["gabbro"].base)
@@ -648,9 +648,9 @@ else
 		--malachite + basalt
 		[42] = function(x, y, z, vi, data, p2data, area, lastlayer)
 			underch.use_stone(vi, data, "peridotite")
-			underch.functions.ore(vi, data, underch.stone.defs["peridotite"].base, c_dynamic_malachite, 1/300)
+			underch.functions.ore(vi, data, underch.stone.defs["peridotite"].base, c_dynamic_malachite, 1/1300)
 			underch.functions.on_floor(x, y, z, vi, area, data, c_stone, c_air, c_burning_mushroom, 1/18, underch.stone.defs["peridotite"].base)
-			underch.functions.ore(vi, data, underch.stone.defs["peridotite"].base, c_dynamic_basalt, 1/200)
+			underch.functions.ore(vi, data, underch.stone.defs["peridotite"].base, c_dynamic_basalt, 1/1200)
 		end,
 		--sichamine
 		[43] = function(x, y, z, vi, data, p2data, area, lastlayer)
@@ -667,7 +667,7 @@ else
 		--omphyrite
 		[45] = function(x, y, z, vi, data, p2data, area, lastlayer)
 			underch.use_stone(vi, data, "omphyrite")
-			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_fo, 1/300, underch.stone.defs["omphyrite"].base)
+			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_fo, 1/1300, underch.stone.defs["omphyrite"].base)
 			--underch.functions.ore(vi, data, underch.stone.defs["omphyrite"].base, c_fiery_dust, 1/13)
 			underch.functions.on_floor(x, y, z, vi, area, data, c_stone, c_air, c_burning_mushroom, 1/18, underch.stone.defs["omphyrite"].base)
 		end,
@@ -683,16 +683,16 @@ else
 		--hektorite + shinestone
 		[48] = function(x, y, z, vi, data, p2data, area, lastlayer)
 			underch.use_stone(vi, data, "hektorite")
-			underch.functions.on_roof(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_shinestone, 1/50, lastlayer, underch.stone.defs["hektorite"].base)
+			underch.functions.on_roof(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_shinestone, 1/1050, lastlayer, underch.stone.defs["hektorite"].base)
 		end,
 		--afualite + diamonds + obsidian
 		[49] = function(x, y, z, vi, data, p2data, area, lastlayer)
 			underch.use_stone(vi, data, "afualite")
 			underch.functions.ore(vi, data, underch.stone.defs["afualite"].base, c_coalblock, 1/18)
 			underch.functions.ore(vi, data, c_coalblock, c_coal_diamond, 1/72)
-			underch.functions.ore(vi, data, underch.stone.defs["afualite"].base, c_dynamic_vindesite, 1/300)
-			underch.functions.ore(vi, data, underch.stone.defs["afualite"].base, c_dynamic_dark_vindesite, 1/300)
-			underch.functions.ore(vi, data, underch.stone.defs["afualite"].base, c_dynamic_obsidian, 1/20)
+			underch.functions.ore(vi, data, underch.stone.defs["afualite"].base, c_dynamic_vindesite, 1/1300)
+			underch.functions.ore(vi, data, underch.stone.defs["afualite"].base, c_dynamic_dark_vindesite, 1/1300)
+			underch.functions.ore(vi, data, underch.stone.defs["afualite"].base, c_dynamic_obsidian, 1/1020)
 		end,
 		--quartz
 		[50] = function(x, y, z, vi, data, p2data, area, lastlayer)
