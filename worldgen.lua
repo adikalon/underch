@@ -369,12 +369,12 @@ if underch.use_jit then
 		[48] = function(x, y, z, vi, data, p2data, area, lastlayer)
 			underch.functions.on_roof(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_shinestone, 1/1050, lastlayer)
 		end,
+		--quartz
+		[49] = do_nothing,
 		--afualite + diamonds + obsidian
-		[49] = function(x, y, z, vi, data, p2data, area, lastlayer)
+		[50] = function(x, y, z, vi, data, p2data, area, lastlayer)
 			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_obsidian, 1/1020)
 		end,
-		--quartz
-		[50] = do_nothing,
 		--green slime
 		[51] = function(x, y, z, vi, data, p2data, area, lastlayer)
 			underch.functions.in_floor(x, y, z, vi, area, data, c_stone, c_air, c_green_slime, 1/1800)
@@ -685,22 +685,22 @@ else
 			underch.use_stone(vi, data, "hektorite")
 			underch.functions.on_roof(x, y, z, vi, area, data, c_stone, c_air, c_dynamic_shinestone, 1/1050, lastlayer, underch.stone.defs["hektorite"].base)
 		end,
-		--afualite + diamonds + obsidian
+		--quartz
 		[49] = function(x, y, z, vi, data, p2data, area, lastlayer)
+			underch.functions.replace(vi, data, c_stone, c_quartz_block)
+			underch.functions.ore(vi, data, c_quartz_block, c_aquamarine_block, 1/4)
+			underch.functions.ore(vi, data, c_quartz_block, c_amethyst_block, 1/3)
+			underch.functions.ore(vi, data, c_quartz_block, c_sichamine_lamp, 1/25)
+			underch.use_stone(vi, data, "sichamine")
+		end,
+		--afualite + diamonds + obsidian
+		[50] = function(x, y, z, vi, data, p2data, area, lastlayer)
 			underch.use_stone(vi, data, "afualite")
 			underch.functions.ore(vi, data, underch.stone.defs["afualite"].base, c_coalblock, 1/18)
 			underch.functions.ore(vi, data, c_coalblock, c_coal_diamond, 1/72)
 			underch.functions.ore(vi, data, underch.stone.defs["afualite"].base, c_dynamic_vindesite, 1/1300)
 			underch.functions.ore(vi, data, underch.stone.defs["afualite"].base, c_dynamic_dark_vindesite, 1/1300)
 			underch.functions.ore(vi, data, underch.stone.defs["afualite"].base, c_dynamic_obsidian, 1/1020)
-		end,
-		--quartz
-		[50] = function(x, y, z, vi, data, p2data, area, lastlayer)
-			underch.functions.replace(vi, data, c_stone, c_quartz_block)
-			underch.functions.ore(vi, data, c_quartz_block, c_aquamarine_block, 1/4)
-			underch.functions.ore(vi, data, c_quartz_block, c_amethyst_block, 1/3)
-			underch.functions.ore(vi, data, c_quartz_block, c_sichamine_lamp, 1/25)
-			underch.use_stone(vi, data, "sichamine")
 		end,
 		--green slime
 		[51] = function(x, y, z, vi, data, p2data, area, lastlayer)
