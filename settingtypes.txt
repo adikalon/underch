@@ -1,7 +1,7 @@
-underch_y_layer_1 (layer 1 beginning) int 31000
-underch_y_layer_2 (layer 2 beginning) int -500
-underch_y_layer_3 (layer 3 beginning) int -8000
-underch_y_layer_4 (layer 4 beginning) int -9000
+underch_y_layer_1 (Layer 1 beginning) int 31000
+underch_y_layer_2 (Layer 2 beginning) int -500
+underch_y_layer_3 (Layer 3 beginning) int -8000
+underch_y_layer_4 (Layer 4 beginning) int -9000
 underch_y_layer_end (End of layers) int -10000
 
 # Ores-JIT makes the ores generate when they are exposed to a see-through block, reducing the size of map on disc. Before this option is used, all ore definitions registering ores in stone must be removed from all other mods manually. They would appear twice otherwise.
