@@ -105,7 +105,7 @@ function underch.functions.get_biome(darkness, water, pressure, y)
 	else
 		darkness = math.floor((darkness + 1)*2)
 		water = math.floor((water + 1)*2)
-		biome = underch.functions.correct_biome(0 + pressure + water + darkness, 18, 0)
+		biome = underch.functions.correct_biome(0 + pressure + water + darkness, 18, 1)
 	end
 
 	return biome
