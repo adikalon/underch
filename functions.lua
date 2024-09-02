@@ -82,30 +82,34 @@ if underch.polynomial_pressure then
 end
 
 function underch.functions.get_biome(darkness, water, pressure, y)
+	-- darkness = darkness * 2
+	-- water = water * 2
 	darkness = math.min(math.max(darkness, -0.999), 0.999)
 	water = math.min(math.max(water, -0.999), 0.999)
 	pressure = math.floor(math.min(math.max((pressure + 1)*3, 0), 5))
+	darkness = math.floor((darkness + 1)*2)
+	water = math.floor((water + 1)*2)
 	-- minetest.chat_send_all("Pressure: " .. pressure)
 	biome = 1
 
 	--print("" + darkness + " " + water + " " + pressure)
 
 	if y < underch.layers.layer_4 then
-		darkness = math.floor(darkness)
-		water = math.floor(water)
-		biome = underch.functions.correct_biome(51 + pressure + water + darkness, 55, 50)
+		-- darkness = math.floor(darkness)
+		-- water = math.floor(water)
+		biome = underch.functions.correct_biome(50 + pressure + water + darkness, 55, 50)
 	elseif y < underch.layers.layer_3 then
-		darkness = math.floor(darkness + 1)
-		water = math.floor(water + 1)
-		biome = underch.functions.correct_biome(43 + pressure + water + darkness, 50, 42)
+		-- darkness = math.floor(darkness + 1)
+		-- water = math.floor(water + 1)
+		biome = underch.functions.correct_biome(42 + pressure + water + darkness, 50, 42)
 	elseif y < underch.layers.layer_2 then
-		darkness = math.floor((darkness + 1)*1.5)
-		water = math.floor((water + 1)*1.5)
-		biome = underch.functions.correct_biome(19 + pressure + water + darkness, 42, 18)
+		-- darkness = math.floor((darkness + 1)*1.5)
+		-- water = math.floor((water + 1)*1.5)
+		biome = underch.functions.correct_biome(18 + pressure + water + darkness, 42, 18)
 	else
-		darkness = math.floor((darkness + 1)*2)
-		water = math.floor((water + 1)*2)
-		biome = underch.functions.correct_biome(0 + pressure + water + darkness, 18, 1)
+		-- darkness = math.floor((darkness + 1)*2)
+		-- water = math.floor((water + 1)*2)
+		biome = underch.functions.correct_biome(0 + pressure + water + darkness, 18, 0)
 	end
 
 	return biome
@@ -306,17 +310,18 @@ function underch.functions.correct_biome(biome, total, skip)
 	end
 
 	if biome < 0 then
-		if (biome * -1) > total then
-			local i = (biome * -1) % (total - skip)
+		-- if (biome * -1) > total then
+		-- 	local i = (biome * -1) % (total - skip)
 
-			if i == 0 then
-				return total
-			end
+		-- 	if i == 0 then
+		-- 		return total
+		-- 	end
 
-			return total + ((i + skip) * -1)
-		end
+		-- 	return total + ((i + skip) * -1)
+		-- end
 
-		return total + (biome * -1)
+		-- return total + (biome * -1)
+		biome = biome * -1
 	end
 
 	if biome > total then
