@@ -97,15 +97,15 @@ function underch.functions.get_biome(darkness, water, pressure, y)
 	if y < underch.layers.layer_4 then
 		-- darkness = math.floor(darkness)
 		-- water = math.floor(water)
-		biome = underch.functions.correct_biome(50 + pressure + water + darkness, 55, 50)
+		biome = underch.functions.correct_biome(49 + pressure + water + darkness, 55, 49)
 	elseif y < underch.layers.layer_3 then
 		-- darkness = math.floor(darkness + 1)
 		-- water = math.floor(water + 1)
-		biome = underch.functions.correct_biome(42 + pressure + water + darkness, 50, 42)
+		biome = underch.functions.correct_biome(43 + pressure + water + darkness, 49, 43)
 	elseif y < underch.layers.layer_2 then
 		-- darkness = math.floor((darkness + 1)*1.5)
 		-- water = math.floor((water + 1)*1.5)
-		biome = underch.functions.correct_biome(18 + pressure + water + darkness, 42, 18)
+		biome = underch.functions.correct_biome(18 + pressure + water + darkness, 43, 18)
 	else
 		-- darkness = math.floor((darkness + 1)*2)
 		-- water = math.floor((water + 1)*2)
