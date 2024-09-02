@@ -20,5 +20,5 @@ There are 55 biomes left in total
 Some biomes have been removed/changed/reordered:
 * Layer 1: simple stones without decorations and slime
 * Layer 2: simple stones with decorations (moss, mushrooms, vines, torches, etc.)
-* Layer 3: variegated stones with their decorations (sichamine, omphyrite, emutite, hektorite, afualite)
+* Layer 3: variegated stones with their decorations (sichamine, omphyrite, emutite, hektorite)
 * Layer 4: dark and slimy stones (vindesite, dark vindesite and slimestones)
