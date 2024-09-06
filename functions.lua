@@ -87,8 +87,15 @@ function underch.functions.get_biome(darkness, water, pressure, y)
 	darkness = math.min(math.max(darkness, -0.999), 0.999)
 	water = math.min(math.max(water, -0.999), 0.999)
 	pressure = math.floor(math.min(math.max((pressure + 1)*3, 0), 5))
-	darkness = math.floor((darkness + 1)*2)
-	water = math.floor((water + 1)*2)
+
+	if y > -100 then
+		darkness = math.floor((darkness + 1)*1.5)
+		water = math.floor((water + 1)*1.5)
+	else
+		darkness = math.floor((darkness + 1)*2)
+		water = math.floor((water + 1)*2)
+	end
+
 	-- minetest.chat_send_all("Pressure: " .. pressure)
 	biome = 1
 
