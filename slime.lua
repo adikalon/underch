@@ -171,8 +171,8 @@ underch.slime.regiser_slime(
 		slime_bucket = underch.S("Black Slime Bucket"),
 		stair = underch.S("Black Slime Block Stair"),
 		slab = underch.S("Black Slime Block Slab"),
-		inner = underch.S("Inner Black Slime Block Slab"),
-		outer = underch.S("Outer Black Slime Block Slab"),
+		inner = underch.S("Inner Black Slime Block Stair"),
+		outer = underch.S("Outer Black Slime Block Stair"),
 		dynamic_slime = underch.S("Dynamic Black Slime"),
 		dynamic_slimy_block = underch.S("Dynamic Black Slimy Block"),
 	}
@@ -192,8 +192,8 @@ underch.slime.regiser_slime(
 		slime_bucket = underch.S("Green Slime Bucket"),
 		stair = underch.S("Green Slime Block Stair"),
 		slab = underch.S("Green Slime Block Slab"),
-		inner = underch.S("Inner Green Slime Block Slab"),
-		outer = underch.S("Outer Green Slime Block Slab"),
+		inner = underch.S("Inner Green Slime Block Stair"),
+		outer = underch.S("Outer Green Slime Block Stair"),
 		dynamic_slime = underch.S("Dynamic Green Slime"),
 		dynamic_slimy_block = underch.S("Dynamic Green Slimy Block"),
 	}
@@ -213,8 +213,8 @@ underch.slime.regiser_slime(
 		slime_bucket = underch.S("Purple Slime Bucket"),
 		stair = underch.S("Purple Slime Block Stair"),
 		slab = underch.S("Purple Slime Block Slab"),
-		inner = underch.S("Inner Purple Slime Block Slab"),
-		outer = underch.S("Outer Purple Slime Block Slab"),
+		inner = underch.S("Inner Purple Slime Block Stair"),
+		outer = underch.S("Outer Purple Slime Block Stair"),
 		dynamic_slime = underch.S("Dynamic Purple Slime"),
 		dynamic_slimy_block = underch.S("Dynamic Purple Slimy Block"),
 	}
@@ -234,8 +234,8 @@ underch.slime.regiser_slime(
 		slime_bucket = underch.S("Red Slime Bucket"),
 		stair = underch.S("Red Slime Block Stair"),
 		slab = underch.S("Red Slime Block Slab"),
-		inner = underch.S("Inner Red Slime Block Slab"),
-		outer = underch.S("Outer Red Slime Block Slab"),
+		inner = underch.S("Inner Red Slime Block Stair"),
+		outer = underch.S("Outer Red Slime Block Stair"),
 		dynamic_slime = underch.S("Dynamic Red Slime"),
 		dynamic_slimy_block = underch.S("Dynamic Red Slimy Block"),
 	}
