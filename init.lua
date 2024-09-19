@@ -19,6 +19,7 @@ underch.have_technic_ores = minetest.get_modpath("technic_worldgen") ~= nil
 underch.have_xtraores = minetest.get_modpath("xtraores") ~= nil
 underch.have_alien_material = minetest.get_modpath("alien_material") ~= nil
 underch.have_magic_materials = minetest.get_modpath("magic_materials") ~= nil
+underch.have_toolranks = minetest.get_modpath("toolranks") ~= nil
 
 underch.use_jit = minetest.settings:get_bool("underch_ores_jit", false)
 underch.polynomial_pressure = minetest.settings:get_bool("underch_polynomial_pressure", false)
@@ -172,3 +173,7 @@ minetest.register_abm({
 		end
 	end
 })
+
+dofile(underch.modpath .. "/tools.lua")
+dofile(underch.modpath .. "/armor.lua")
+dofile(underch.modpath .. "/arrows.lua")
