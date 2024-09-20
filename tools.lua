@@ -1,5 +1,19 @@
 local COOLDOWN = dofile(underch.modpath .. "/cooldowns.lua")
 
+local function activate_func(user, pointedname, pointeddef, pointed)
+	if pointeddef.on_ignite then
+		pointeddef.on_ignite(pointed.under, user)
+	elseif lavastuff.fire_node and minetest.registered_nodes[lavastuff.fire_node] and
+	minetest.get_item_group(pointedname, "flammable") >= 1 and
+	minetest.get_node(pointed.above).name == "air" then
+		minetest.set_node(pointed.above, {name = lavastuff.fire_node})
+
+		if lavastuff.game == "nodecore" then
+			nodecore.fire_check_ignite(pointed.under)
+		end
+	end
+end
+
 local function tool_fire_func(itemstack, user, pointed)
 	local name = user:get_player_name()
 
@@ -387,6 +401,44 @@ minetest.register_craft({
 		{"",                "default:stick",   ""},
 	}
 })
+
+-- tt
+
+if underch.have_tt then
+	tt.register_snippet(function(itemstring)
+		local def = minetest.registered_items[itemstring]
+		local prefix = underch.S("Superpower")
+		local desc
+
+		if def.name == "underch:sword_emerald" then
+			desc = minetest.colorize("#00BFFF",  prefix .. ": " .. "-")
+		elseif def.name == "underch:pick_emerald" then
+			desc = minetest.colorize("#00BFFF",  prefix .. ": " .. "-")
+		elseif def.name == "underch:shovel_emerald" then
+			desc = minetest.colorize("#00BFFF",  prefix .. ": " .. "-")
+		elseif def.name == "underch:axe_emerald" then
+			desc = minetest.colorize("#00BFFF",  prefix .. ": " .. "-")
+		elseif def.name == "underch:sword_ruby" then
+			desc = minetest.colorize("#00BFFF",  prefix .. ": " .. "-")
+		elseif def.name == "underch:pick_ruby" then
+			desc = minetest.colorize("#00BFFF",  prefix .. ": " .. "-")
+		elseif def.name == "underch:shovel_ruby" then
+			desc = minetest.colorize("#00BFFF",  prefix .. ": " .. "-")
+		elseif def.name == "underch:axe_ruby" then
+			desc = minetest.colorize("#00BFFF",  prefix .. ": " .. "-")
+		elseif def.name == "underch:sword_saphire" then
+			desc = minetest.colorize("#00BFFF",  prefix .. ": " .. "-")
+		elseif def.name == "underch:pick_saphire" then
+			desc = minetest.colorize("#00BFFF",  prefix .. ": " .. "-")
+		elseif def.name == "underch:shovel_saphire" then
+			desc = minetest.colorize("#00BFFF",  prefix .. ": " .. "-")
+		elseif def.name == "underch:axe_saphire" then
+			desc = minetest.colorize("#00BFFF",  prefix .. ": " .. "-")
+		end
+
+		return desc
+	end)
+end
 
 -- toolranks
 
