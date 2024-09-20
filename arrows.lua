@@ -2,7 +2,7 @@ if underch.have_tt then
 	XBows:register_arrow("arrow_emerald", {
 		description = underch.S("Arrow Emerald"),
 		short_description = underch.S("Arrow Emerald"),
-		inventory_image = "x_bows_arrow_emerald.png",
+		inventory_image = "underch_arrow_emerald.png",
 		custom = {
 			mod_name = "underch",
 			recipe = {
@@ -21,7 +21,7 @@ if underch.have_tt then
 	XBows:register_arrow("arrow_ruby", {
 		description = underch.S("Arrow Ruby"),
 		short_description = underch.S("Arrow Ruby"),
-		inventory_image = "x_bows_arrow_ruby.png",
+		inventory_image = "underch_arrow_ruby.png",
 		custom = {
 			mod_name = "underch",
 			recipe = {
@@ -40,7 +40,7 @@ if underch.have_tt then
 	XBows:register_arrow("arrow_saphire", {
 		description = underch.S("Arrow Saphire"),
 		short_description = underch.S("Arrow Saphire"),
-		inventory_image = "x_bows_arrow_saphire.png",
+		inventory_image = "underch_arrow_saphire.png",
 		custom = {
 			mod_name = "underch",
 			recipe = {
