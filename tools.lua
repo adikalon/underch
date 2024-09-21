@@ -1,40 +1,3 @@
-local COOLDOWN = dofile(underch.modpath .. "/cooldowns.lua")
-
-local function activate_func(user, pointedname, pointeddef, pointed)
-	if pointeddef.on_ignite then
-		pointeddef.on_ignite(pointed.under, user)
-	elseif lavastuff.fire_node and minetest.registered_nodes[lavastuff.fire_node] and
-	minetest.get_item_group(pointedname, "flammable") >= 1 and
-	minetest.get_node(pointed.above).name == "air" then
-		minetest.set_node(pointed.above, {name = lavastuff.fire_node})
-
-		if lavastuff.game == "nodecore" then
-			nodecore.fire_check_ignite(pointed.under)
-		end
-	end
-end
-
-local function tool_fire_func(itemstack, user, pointed)
-	local name = user:get_player_name()
-
-	if pointed.type == "node" then
-		local node = minetest.get_node(pointed.under)
-		local def = minetest.registered_nodes[node.name]
-
-		if def.on_rightclick then
-			return def.on_rightclick(pointed.under, node, user, itemstack, pointed)
-		end
-
-		if minetest.is_protected(pointed.under, name) then return end
-
-		-- Only allow fire every 1+ second(s)
-		if not COOLDOWN:get(user) then
-			activate_func(user, node.name, def, pointed)
-			COOLDOWN:set(user, 1)
-		end
-	end
-end
-
 -- tools
 
 minetest.register_tool("underch:sword_emerald", {
@@ -44,9 +7,9 @@ minetest.register_tool("underch:sword_emerald", {
 		full_punch_interval = 0.7,
 		max_drop_level = 1,
 		groupcaps = {
-			snappy={times = {[1] = 1.90, [2] = 0.90, [3] = 0.30}, uses = 40, maxlevel = 3},
+			snappy={times = {[1] = 1.90, [2] = 0.90, [3] = 0.30}, uses = 20, maxlevel = 3},
 		},
-		damage_groups = {fleshy = 8},
+		damage_groups = {fleshy = 16},
 	},
 	sound = {breaks = "default_tool_breaks"},
 	groups = {sword = 1},
@@ -59,9 +22,9 @@ minetest.register_tool("underch:pick_emerald", {
 		full_punch_interval = 0.9,
 		max_drop_level = 3,
 		groupcaps = {
-			cracky = {times = {[1] = 2.0, [2] = 1.0, [3] = 0.50}, uses = 30, maxlevel = 3},
+			cracky = {times = {[1] = 2.0, [2] = 1.0, [3] = 0.50}, uses = 15, maxlevel = 3},
 		},
-		damage_groups = {fleshy = 5},
+		damage_groups = {fleshy = 10},
 	},
 	sound = {breaks = "default_tool_breaks"},
 	groups = {pickaxe = 1},
@@ -75,9 +38,9 @@ minetest.register_tool("underch:shovel_emerald", {
 		full_punch_interval = 1.0,
 		max_drop_level = 1,
 		groupcaps = {
-			crumbly = {times = {[1] = 1.10, [2] = 0.50, [3] = 0.30}, uses = 30, maxlevel = 3},
+			crumbly = {times = {[1] = 1.10, [2] = 0.50, [3] = 0.30}, uses = 15, maxlevel = 3},
 		},
-		damage_groups = {fleshy = 4},
+		damage_groups = {fleshy = 8},
 	},
 	sound = {breaks = "default_tool_breaks"},
 	groups = {shovel = 1},
@@ -90,9 +53,9 @@ minetest.register_tool("underch:axe_emerald", {
 		full_punch_interval = 0.9,
 		max_drop_level = 1,
 		groupcaps = {
-			choppy = {times = {[1] = 2.10, [2] = 0.90, [3] = 0.50}, uses = 30, maxlevel = 3},
+			choppy = {times = {[1] = 2.10, [2] = 0.90, [3] = 0.50}, uses = 15, maxlevel = 3},
 		},
-		damage_groups = {fleshy = 7},
+		damage_groups = {fleshy = 14},
 	},
 	sound = {breaks = "default_tool_breaks"},
 	groups = {axe = 1},
@@ -105,9 +68,9 @@ minetest.register_tool("underch:sword_ruby", {
 		full_punch_interval = 0.7,
 		max_drop_level = 1,
 		groupcaps = {
-			snappy={times = {[1] = 1.90, [2] = 0.90, [3] = 0.30}, uses = 40, maxlevel = 3},
+			snappy={times = {[1] = 1.90, [2] = 0.90, [3] = 0.30}, uses = 10, maxlevel = 3},
 		},
-		damage_groups = {fleshy = 8},
+		damage_groups = {fleshy = 32},
 	},
 	sound = {breaks = "default_tool_breaks"},
 	groups = {sword = 1},
@@ -120,9 +83,9 @@ minetest.register_tool("underch:pick_ruby", {
 		full_punch_interval = 0.9,
 		max_drop_level = 3,
 		groupcaps = {
-			cracky = {times = {[1] = 2.0, [2] = 1.0, [3] = 0.50}, uses = 30, maxlevel = 3},
+			cracky = {times = {[1] = 2.0, [2] = 1.0, [3] = 0.50}, uses = 8, maxlevel = 3},
 		},
-		damage_groups = {fleshy = 5},
+		damage_groups = {fleshy = 20},
 	},
 	sound = {breaks = "default_tool_breaks"},
 	groups = {pickaxe = 1},
@@ -136,9 +99,9 @@ minetest.register_tool("underch:shovel_ruby", {
 		full_punch_interval = 1.0,
 		max_drop_level = 1,
 		groupcaps = {
-			crumbly = {times = {[1] = 1.10, [2] = 0.50, [3] = 0.30}, uses = 30, maxlevel = 3},
+			crumbly = {times = {[1] = 1.10, [2] = 0.50, [3] = 0.30}, uses = 8, maxlevel = 3},
 		},
-		damage_groups = {fleshy = 4},
+		damage_groups = {fleshy = 16},
 	},
 	sound = {breaks = "default_tool_breaks"},
 	groups = {shovel = 1},
@@ -151,9 +114,9 @@ minetest.register_tool("underch:axe_ruby", {
 		full_punch_interval = 0.9,
 		max_drop_level = 1,
 		groupcaps = {
-			choppy = {times = {[1] = 2.10, [2] = 0.90, [3] = 0.50}, uses = 30, maxlevel = 3},
+			choppy = {times = {[1] = 2.10, [2] = 0.90, [3] = 0.50}, uses = 8, maxlevel = 3},
 		},
-		damage_groups = {fleshy = 7},
+		damage_groups = {fleshy = 28},
 	},
 	sound = {breaks = "default_tool_breaks"},
 	groups = {axe = 1},
@@ -166,9 +129,9 @@ minetest.register_tool("underch:sword_saphire", {
 		full_punch_interval = 0.7,
 		max_drop_level = 1,
 		groupcaps = {
-			snappy={times = {[1] = 1.90, [2] = 0.90, [3] = 0.30}, uses = 40, maxlevel = 3},
+			snappy={times = {[1] = 1.90, [2] = 0.90, [3] = 0.30}, uses = 5, maxlevel = 3},
 		},
-		damage_groups = {fleshy = 8},
+		damage_groups = {fleshy = 64},
 	},
 	sound = {breaks = "default_tool_breaks"},
 	groups = {sword = 1},
@@ -181,9 +144,9 @@ minetest.register_tool("underch:pick_saphire", {
 		full_punch_interval = 0.9,
 		max_drop_level = 3,
 		groupcaps = {
-			cracky = {times = {[1] = 2.0, [2] = 1.0, [3] = 0.50}, uses = 30, maxlevel = 3},
+			cracky = {times = {[1] = 2.0, [2] = 1.0, [3] = 0.50}, uses = 4, maxlevel = 3},
 		},
-		damage_groups = {fleshy = 5},
+		damage_groups = {fleshy = 40},
 	},
 	sound = {breaks = "default_tool_breaks"},
 	groups = {pickaxe = 1},
@@ -197,9 +160,9 @@ minetest.register_tool("underch:shovel_saphire", {
 		full_punch_interval = 1.0,
 		max_drop_level = 1,
 		groupcaps = {
-			crumbly = {times = {[1] = 1.10, [2] = 0.50, [3] = 0.30}, uses = 30, maxlevel = 3},
+			crumbly = {times = {[1] = 1.10, [2] = 0.50, [3] = 0.30}, uses = 4, maxlevel = 3},
 		},
-		damage_groups = {fleshy = 4},
+		damage_groups = {fleshy = 32},
 	},
 	sound = {breaks = "default_tool_breaks"},
 	groups = {shovel = 1},
@@ -212,9 +175,9 @@ minetest.register_tool("underch:axe_saphire", {
 		full_punch_interval = 0.9,
 		max_drop_level = 1,
 		groupcaps = {
-			choppy = {times = {[1] = 2.10, [2] = 0.90, [3] = 0.50}, uses = 30, maxlevel = 3},
+			choppy = {times = {[1] = 2.10, [2] = 0.90, [3] = 0.50}, uses = 4, maxlevel = 3},
 		},
-		damage_groups = {fleshy = 7},
+		damage_groups = {fleshy = 56},
 	},
 	sound = {breaks = "default_tool_breaks"},
 	groups = {axe = 1},
@@ -339,29 +302,29 @@ if underch.have_tt then
 		local desc
 
 		if def.name == "underch:sword_emerald" then
-			desc = minetest.colorize("#FFDF00",  prefix .. ": " .. underch.S("Silk Touch"))
+			desc = minetest.colorize("#AA00FF",  prefix .. ": " .. underch.S("Silk Touch"))
 		elseif def.name == "underch:pick_emerald" then
-			desc = minetest.colorize("#FFDF00",  prefix .. ": " .. underch.S("Silk Touch"))
+			desc = minetest.colorize("#AA00FF",  prefix .. ": " .. underch.S("Silk Touch"))
 		elseif def.name == "underch:shovel_emerald" then
-			desc = minetest.colorize("#FFDF00",  prefix .. ": " .. underch.S("Silk Touch"))
+			desc = minetest.colorize("#AA00FF",  prefix .. ": " .. underch.S("Silk Touch"))
 		elseif def.name == "underch:axe_emerald" then
-			desc = minetest.colorize("#FFDF00",  prefix .. ": " .. underch.S("Silk Touch"))
+			desc = minetest.colorize("#AA00FF",  prefix .. ": " .. underch.S("Silk Touch"))
 		elseif def.name == "underch:sword_ruby" then
-			desc = minetest.colorize("#FFDF00",  prefix .. ": " .. "-")
+			desc = minetest.colorize("#AA00FF",  prefix .. ": " .. underch.S("Recycling"))
 		elseif def.name == "underch:pick_ruby" then
-			desc = minetest.colorize("#FFDF00",  prefix .. ": " .. "-")
+			desc = minetest.colorize("#AA00FF",  prefix .. ": " .. underch.S("Recycling"))
 		elseif def.name == "underch:shovel_ruby" then
-			desc = minetest.colorize("#FFDF00",  prefix .. ": " .. "-")
+			desc = minetest.colorize("#AA00FF",  prefix .. ": " .. underch.S("Recycling"))
 		elseif def.name == "underch:axe_ruby" then
-			desc = minetest.colorize("#FFDF00",  prefix .. ": " .. "-")
+			desc = minetest.colorize("#AA00FF",  prefix .. ": " .. underch.S("Recycling"))
 		elseif def.name == "underch:sword_saphire" then
-			desc = minetest.colorize("#FFDF00",  prefix .. ": " .. underch.S("Multiplied Drop"))
+			desc = minetest.colorize("#AA00FF",  prefix .. ": " .. underch.S("Multiplied Drop"))
 		elseif def.name == "underch:pick_saphire" then
-			desc = minetest.colorize("#FFDF00",  prefix .. ": " .. underch.S("Multiplied Drop"))
+			desc = minetest.colorize("#AA00FF",  prefix .. ": " .. underch.S("Multiplied Drop"))
 		elseif def.name == "underch:shovel_saphire" then
-			desc = minetest.colorize("#FFDF00",  prefix .. ": " .. underch.S("Multiplied Drop"))
+			desc = minetest.colorize("#AA00FF",  prefix .. ": " .. underch.S("Multiplied Drop"))
 		elseif def.name == "underch:axe_saphire" then
-			desc = minetest.colorize("#FFDF00",  prefix .. ": " .. underch.S("Multiplied Drop"))
+			desc = minetest.colorize("#AA00FF",  prefix .. ": " .. underch.S("Multiplied Drop"))
 		end
 
 		return desc

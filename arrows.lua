@@ -1,4 +1,4 @@
-if underch.have_tt then
+if underch.have_x_bows then
 	XBows:register_arrow("arrow_emerald", {
 		description = underch.S("Arrow Emerald"),
 		short_description = underch.S("Arrow Emerald"),
@@ -11,9 +11,9 @@ if underch.have_tt then
 				{"group:wool"},
 			},
 			tool_capabilities = {
-				full_punch_interval = 0.3,
+				full_punch_interval = 0.4,
 				max_drop_level = 1,
-				damage_groups = {fleshy = 30},
+				damage_groups = {fleshy = 16},
 			},
 		}
 	})
@@ -30,9 +30,9 @@ if underch.have_tt then
 				{"group:wool"},
 			},
 			tool_capabilities = {
-				full_punch_interval = 0.3,
+				full_punch_interval = 0.2,
 				max_drop_level = 1,
-				damage_groups = {fleshy = 30},
+				damage_groups = {fleshy = 32},
 			},
 		}
 	})
@@ -49,9 +49,9 @@ if underch.have_tt then
 				{"group:wool"},
 			},
 			tool_capabilities = {
-				full_punch_interval = 0.3,
+				full_punch_interval = 0.1,
 				max_drop_level = 1,
-				damage_groups = {fleshy = 30},
+				damage_groups = {fleshy = 64},
 			},
 		}
 	})
@@ -61,22 +61,4 @@ if underch.have_tt then
 		"underch:arrow_ruby",
 		"underch:arrow_saphire",
 	})
-end
-
-if underch.have_tt then
-	tt.register_snippet(function(itemstring)
-		local def = minetest.registered_items[itemstring]
-		local prefix = underch.S("Superpower")
-		local desc
-
-		if def.name == "underch:arrow_emerald" then
-			desc = minetest.colorize("#00BFFF",  prefix .. ": " .. "-")
-		elseif def.name == "underch:arrow_ruby" then
-			desc = minetest.colorize("#00BFFF",  prefix .. ": " .. "-")
-		elseif def.name == "underch:arrow_saphire" then
-			desc = minetest.colorize("#00BFFF",  prefix .. ": " .. "-")
-		end
-
-		return desc
-	end)
 end
