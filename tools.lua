@@ -302,29 +302,29 @@ if underch.have_tt then
 		local desc
 
 		if def.name == "underch:sword_emerald" then
-			desc = minetest.colorize("#5500FF",  prefix .. ": " .. underch.S("Silk Touch"))
+			desc = minetest.colorize("#AAFFFF",  prefix .. ": " .. underch.S("Silk Touch"))
 		elseif def.name == "underch:pick_emerald" then
-			desc = minetest.colorize("#5500FF",  prefix .. ": " .. underch.S("Silk Touch"))
+			desc = minetest.colorize("#AAFFFF",  prefix .. ": " .. underch.S("Silk Touch"))
 		elseif def.name == "underch:shovel_emerald" then
-			desc = minetest.colorize("#5500FF",  prefix .. ": " .. underch.S("Silk Touch"))
+			desc = minetest.colorize("#AAFFFF",  prefix .. ": " .. underch.S("Silk Touch"))
 		elseif def.name == "underch:axe_emerald" then
-			desc = minetest.colorize("#5500FF",  prefix .. ": " .. underch.S("Silk Touch"))
+			desc = minetest.colorize("#AAFFFF",  prefix .. ": " .. underch.S("Silk Touch"))
 		elseif def.name == "underch:sword_ruby" then
-			desc = minetest.colorize("#5500FF",  prefix .. ": " .. underch.S("Recycling"))
+			desc = minetest.colorize("#AAFFFF",  prefix .. ": " .. underch.S("Recycling"))
 		elseif def.name == "underch:pick_ruby" then
-			desc = minetest.colorize("#5500FF",  prefix .. ": " .. underch.S("Recycling"))
+			desc = minetest.colorize("#AAFFFF",  prefix .. ": " .. underch.S("Recycling"))
 		elseif def.name == "underch:shovel_ruby" then
-			desc = minetest.colorize("#5500FF",  prefix .. ": " .. underch.S("Recycling"))
+			desc = minetest.colorize("#AAFFFF",  prefix .. ": " .. underch.S("Recycling"))
 		elseif def.name == "underch:axe_ruby" then
-			desc = minetest.colorize("#5500FF",  prefix .. ": " .. underch.S("Recycling"))
+			desc = minetest.colorize("#AAFFFF",  prefix .. ": " .. underch.S("Recycling"))
 		elseif def.name == "underch:sword_saphire" then
-			desc = minetest.colorize("#5500FF",  prefix .. ": " .. underch.S("Multiplied Drop"))
+			desc = minetest.colorize("#AAFFFF",  prefix .. ": " .. underch.S("Multiplied Drop"))
 		elseif def.name == "underch:pick_saphire" then
-			desc = minetest.colorize("#5500FF",  prefix .. ": " .. underch.S("Multiplied Drop"))
+			desc = minetest.colorize("#AAFFFF",  prefix .. ": " .. underch.S("Multiplied Drop"))
 		elseif def.name == "underch:shovel_saphire" then
-			desc = minetest.colorize("#5500FF",  prefix .. ": " .. underch.S("Multiplied Drop"))
+			desc = minetest.colorize("#AAFFFF",  prefix .. ": " .. underch.S("Multiplied Drop"))
 		elseif def.name == "underch:axe_saphire" then
-			desc = minetest.colorize("#5500FF",  prefix .. ": " .. underch.S("Multiplied Drop"))
+			desc = minetest.colorize("#AAFFFF",  prefix .. ": " .. underch.S("Multiplied Drop"))
 		end
 
 		return desc

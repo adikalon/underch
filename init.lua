@@ -24,6 +24,10 @@ underch.have_tt = minetest.get_modpath("tt") ~= nil
 underch.have_x_bows = minetest.get_modpath("x_bows") ~= nil
 underch.have_3d_armor = minetest.get_modpath("3d_armor") ~= nil
 underch.have_shields = minetest.get_modpath("shields") ~= nil
+underch.have_lootchests_default = minetest.get_modpath("lootchests_default") ~= nil
+underch.have_dungeon_loot = minetest.get_modpath("dungeon_loot") ~= nil
+underch.have_bones_loot = minetest.get_modpath("bones_loot") ~= nil
+underch.have_handle_schematics = minetest.get_modpath("handle_schematics") ~= nil
 
 underch.use_jit = minetest.settings:get_bool("underch_ores_jit", false)
 underch.polynomial_pressure = minetest.settings:get_bool("underch_polynomial_pressure", false)
@@ -181,3 +185,4 @@ minetest.register_abm({
 dofile(underch.modpath .. "/tools.lua")
 dofile(underch.modpath .. "/armor.lua")
 dofile(underch.modpath .. "/arrows.lua")
+dofile(underch.modpath .. "/gifts.lua")
