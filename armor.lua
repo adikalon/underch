@@ -2,7 +2,7 @@ if underch.have_3d_armor then
 	armor:register_armor("underch:helmet_emerald", {
 		description = underch.S("Emerald Helmet"),
 		inventory_image = "underch_inv_helmet_emerald.png",
-		groups = {armor_head = 1, armor_heal = 24, armor_use = 400},
+		groups = {armor_head = 1, armor_heal = 12, armor_use = 400, physics_speed = 0.2, physics_jump = 0.2, physics_gravity = -0.02},
 		armor_groups = {fleshy = 15},
 		damage_groups = {cracky = 2, snappy = 1, choppy = 1, level = 3},
 		texture = "underch_helmet_emerald.png",
@@ -12,7 +12,7 @@ if underch.have_3d_armor then
 	armor:register_armor("underch:chestplate_emerald", {
 		description = underch.S("Emerald Chestplate"),
 		inventory_image = "underch_inv_chestplate_emerald.png",
-		groups = {armor_torso = 1, armor_heal = 24, armor_use = 400},
+		groups = {armor_torso = 1, armor_heal = 12, armor_use = 400, physics_speed = 0.2, physics_jump = 0.2, physics_gravity = -0.02},
 		armor_groups = {fleshy = 20},
 		damage_groups = {cracky = 2, snappy = 1, choppy = 1, level = 3},
 		texture = "underch_chestplate_emerald.png",
@@ -22,7 +22,7 @@ if underch.have_3d_armor then
 	armor:register_armor("underch:leggings_emerald", {
 		description = underch.S("Emerald Leggings"),
 		inventory_image = "underch_inv_leggings_emerald.png",
-		groups = {armor_legs = 1, armor_heal = 24, armor_use = 400},
+		groups = {armor_legs = 1, armor_heal = 12, armor_use = 400, physics_speed = 0.2, physics_jump = 0.2, physics_gravity = -0.02},
 		armor_groups = {fleshy = 20},
 		damage_groups = {cracky = 2, snappy = 1, choppy = 1, level = 3},
 		texture = "underch_leggings_emerald.png",
@@ -32,7 +32,7 @@ if underch.have_3d_armor then
 	armor:register_armor("underch:boots_emerald", {
 		description = underch.S("Emerald Boots"),
 		inventory_image = "underch_inv_boots_emerald.png",
-		groups = {armor_feet = 1, armor_heal = 24, armor_use = 400},
+		groups = {armor_feet = 1, armor_heal = 12, armor_use = 400, physics_speed = 0.2, physics_jump = 0.2, physics_gravity = -0.02},
 		armor_groups = {fleshy = 15},
 		damage_groups = {cracky = 2, snappy = 1, choppy = 1, level = 3},
 		texture = "underch_boots_emerald.png",
@@ -77,7 +77,7 @@ if underch.have_3d_armor then
 	armor:register_armor("underch:helmet_ruby", {
 		description = underch.S("Ruby Helmet"),
 		inventory_image = "underch_inv_helmet_ruby.png",
-		groups = {armor_head = 1, armor_heal = 48, armor_use = 800},
+		groups = {armor_head = 1, armor_heal = 12, armor_use = 800, armor_fire = 5},
 		armor_groups = {fleshy = 15},
 		damage_groups = {cracky = 2, snappy = 1, choppy = 1, level = 3},
 		texture = "underch_helmet_ruby.png",
@@ -87,7 +87,7 @@ if underch.have_3d_armor then
 	armor:register_armor("underch:chestplate_ruby", {
 		description = underch.S("Ruby Chestplate"),
 		inventory_image = "underch_inv_chestplate_ruby.png",
-		groups = {armor_torso = 1, armor_heal = 48, armor_use = 800},
+		groups = {armor_torso = 1, armor_heal = 12, armor_use = 800, armor_fire = 5},
 		armor_groups = {fleshy = 20},
 		damage_groups = {cracky = 2, snappy = 1, choppy = 1, level = 3},
 		texture = "underch_chestplate_ruby.png",
@@ -97,7 +97,7 @@ if underch.have_3d_armor then
 	armor:register_armor("underch:leggings_ruby", {
 		description = underch.S("Ruby Leggings"),
 		inventory_image = "underch_inv_leggings_ruby.png",
-		groups = {armor_legs = 1, armor_heal = 48, armor_use = 800},
+		groups = {armor_legs = 1, armor_heal = 12, armor_use = 800, armor_fire = 5},
 		armor_groups = {fleshy = 20},
 		damage_groups = {cracky = 2, snappy = 1, choppy = 1, level = 3},
 		texture = "underch_leggings_ruby.png",
@@ -107,7 +107,7 @@ if underch.have_3d_armor then
 	armor:register_armor("underch:boots_ruby", {
 		description = underch.S("Ruby Boots"),
 		inventory_image = "underch_inv_boots_ruby.png",
-		groups = {armor_feet = 1, armor_heal = 48, armor_use = 800},
+		groups = {armor_feet = 1, armor_heal = 12, armor_use = 800, armor_fire = 5},
 		armor_groups = {fleshy = 15},
 		damage_groups = {cracky = 2, snappy = 1, choppy = 1, level = 3},
 		texture = "underch_boots_ruby.png",
@@ -152,7 +152,7 @@ if underch.have_3d_armor then
 	armor:register_armor("underch:helmet_saphire", {
 		description = underch.S("Saphire Helmet"),
 		inventory_image = "underch_inv_helmet_saphire.png",
-		groups = {armor_head = 1, armor_heal = 96, armor_use = 1600},
+		groups = {armor_head = 1, armor_heal = 17, armor_use = 1600, physics_speed = -0.25, physics_jump = -0.25, physics_gravity = 0.25},
 		armor_groups = {fleshy = 15},
 		damage_groups = {cracky = 2, snappy = 1, choppy = 1, level = 3},
 		texture = "underch_helmet_saphire.png",
@@ -162,7 +162,7 @@ if underch.have_3d_armor then
 	armor:register_armor("underch:chestplate_saphire", {
 		description = underch.S("Saphire Chestplate"),
 		inventory_image = "underch_inv_chestplate_saphire.png",
-		groups = {armor_torso = 1, armor_heal = 96, armor_use = 1600},
+		groups = {armor_torso = 1, armor_heal = 17, armor_use = 1600, physics_speed = -0.25, physics_jump = -0.25, physics_gravity = 0.25},
 		armor_groups = {fleshy = 20},
 		damage_groups = {cracky = 2, snappy = 1, choppy = 1, level = 3},
 		texture = "underch_chestplate_saphire.png",
@@ -172,7 +172,7 @@ if underch.have_3d_armor then
 	armor:register_armor("underch:leggings_saphire", {
 		description = underch.S("Saphire Leggings"),
 		inventory_image = "underch_inv_leggings_saphire.png",
-		groups = {armor_legs = 1, armor_heal = 96, armor_use = 1600},
+		groups = {armor_legs = 1, armor_heal = 17, armor_use = 1600, physics_speed = -0.25, physics_jump = -0.25, physics_gravity = 0.25},
 		armor_groups = {fleshy = 20},
 		damage_groups = {cracky = 2, snappy = 1, choppy = 1, level = 3},
 		texture = "underch_leggings_saphire.png",
@@ -182,7 +182,7 @@ if underch.have_3d_armor then
 	armor:register_armor("underch:boots_saphire", {
 		description = underch.S("Saphire Boots"),
 		inventory_image = "underch_inv_boots_saphire.png",
-		groups = {armor_feet = 1, armor_heal = 96, armor_use = 1600},
+		groups = {armor_feet = 1, armor_heal = 17, armor_use = 1600, physics_speed = -0.25, physics_jump = -0.25, physics_gravity = 0.25},
 		armor_groups = {fleshy = 15},
 		damage_groups = {cracky = 2, snappy = 1, choppy = 1, level = 3},
 		texture = "underch_boots_saphire.png",
@@ -229,16 +229,10 @@ if underch.have_shields then
 	armor:register_armor("underch:shield_emerald", {
 		description = underch.S("Emerald Shield"),
 		inventory_image = "underch_inv_shield_emerald.png",
-		groups = {armor_shield = 1, armor_heal = 24, armor_use = 400},
+		groups = {armor_shield = 1, armor_heal = 12, armor_use = 400, physics_speed = 0.2, physics_jump = 0.2, physics_gravity = -0.02},
 		armor_groups = {fleshy = 15},
 		damage_groups = {cracky = 2, snappy = 1, choppy = 1, level = 3},
 		reciprocate_damage = true,
-		on_damage = function(player, index, stack)
-			play_sound_effect(player, "default_glass_footstep")
-		end,
-		on_destroy = function(player, index, stack)
-			play_sound_effect(player, "default_break_glass")
-		end,
 	})
 
 	minetest.register_craft({
@@ -253,16 +247,10 @@ if underch.have_shields then
 	armor:register_armor("underch:shield_ruby", {
 		description = underch.S("Ruby Shield"),
 		inventory_image = "underch_inv_shield_ruby.png",
-		groups = {armor_shield = 1, armor_heal = 48, armor_use = 800},
+		groups = {armor_shield = 1, armor_heal = 12, armor_use = 800, armor_fire = 5},
 		armor_groups = {fleshy = 15},
 		damage_groups = {cracky = 2, snappy = 1, choppy = 1, level = 3},
 		reciprocate_damage = true,
-		on_damage = function(player, index, stack)
-			play_sound_effect(player, "default_glass_footstep")
-		end,
-		on_destroy = function(player, index, stack)
-			play_sound_effect(player, "default_break_glass")
-		end,
 	})
 
 	minetest.register_craft({
@@ -277,16 +265,10 @@ if underch.have_shields then
 	armor:register_armor("underch:shield_saphire", {
 		description = underch.S("Saphire Shield"),
 		inventory_image = "underch_inv_shield_saphire.png",
-		groups = {armor_shield = 1, armor_heal = 96, armor_use = 1600},
+		groups = {armor_shield = 1, armor_heal = 17, armor_use = 1600},
 		armor_groups = {fleshy = 15},
 		damage_groups = {cracky = 2, snappy = 1, choppy = 1, level = 3},
 		reciprocate_damage = true,
-		on_damage = function(player, index, stack)
-			play_sound_effect(player, "default_glass_footstep")
-		end,
-		on_destroy = function(player, index, stack)
-			play_sound_effect(player, "default_break_glass")
-		end,
 	})
 
 	minetest.register_craft({
