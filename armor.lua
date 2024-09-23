@@ -2,7 +2,7 @@ if underch.have_3d_armor then
 	armor:register_armor("underch:helmet_emerald", {
 		description = underch.S("Emerald Helmet"),
 		inventory_image = "underch_inv_helmet_emerald.png",
-		groups = {armor_head = 1, armor_heal = 12, armor_use = 400, physics_speed = 0.2, physics_jump = 0.2, physics_gravity = -0.02},
+		groups = {armor_head = 1, armor_heal = 6, armor_use = 400, physics_speed = 0.2, physics_jump = 0.2, physics_gravity = -0.02},
 		armor_groups = {fleshy = 15},
 		damage_groups = {cracky = 2, snappy = 1, choppy = 1, level = 3},
 		texture = "underch_helmet_emerald.png",
@@ -12,7 +12,7 @@ if underch.have_3d_armor then
 	armor:register_armor("underch:chestplate_emerald", {
 		description = underch.S("Emerald Chestplate"),
 		inventory_image = "underch_inv_chestplate_emerald.png",
-		groups = {armor_torso = 1, armor_heal = 12, armor_use = 400, physics_speed = 0.2, physics_jump = 0.2, physics_gravity = -0.02},
+		groups = {armor_torso = 1, armor_heal = 6, armor_use = 400, physics_speed = 0.2, physics_jump = 0.2, physics_gravity = -0.02},
 		armor_groups = {fleshy = 20},
 		damage_groups = {cracky = 2, snappy = 1, choppy = 1, level = 3},
 		texture = "underch_chestplate_emerald.png",
@@ -22,7 +22,7 @@ if underch.have_3d_armor then
 	armor:register_armor("underch:leggings_emerald", {
 		description = underch.S("Emerald Leggings"),
 		inventory_image = "underch_inv_leggings_emerald.png",
-		groups = {armor_legs = 1, armor_heal = 12, armor_use = 400, physics_speed = 0.2, physics_jump = 0.2, physics_gravity = -0.02},
+		groups = {armor_legs = 1, armor_heal = 6, armor_use = 400, physics_speed = 0.2, physics_jump = 0.2, physics_gravity = -0.02},
 		armor_groups = {fleshy = 20},
 		damage_groups = {cracky = 2, snappy = 1, choppy = 1, level = 3},
 		texture = "underch_leggings_emerald.png",
@@ -32,7 +32,7 @@ if underch.have_3d_armor then
 	armor:register_armor("underch:boots_emerald", {
 		description = underch.S("Emerald Boots"),
 		inventory_image = "underch_inv_boots_emerald.png",
-		groups = {armor_feet = 1, armor_heal = 12, armor_use = 400, physics_speed = 0.2, physics_jump = 0.2, physics_gravity = -0.02},
+		groups = {armor_feet = 1, armor_heal = 6, armor_use = 400, physics_speed = 0.2, physics_jump = 0.2, physics_gravity = -0.02},
 		armor_groups = {fleshy = 15},
 		damage_groups = {cracky = 2, snappy = 1, choppy = 1, level = 3},
 		texture = "underch_boots_emerald.png",
@@ -229,7 +229,7 @@ if underch.have_shields then
 	armor:register_armor("underch:shield_emerald", {
 		description = underch.S("Emerald Shield"),
 		inventory_image = "underch_inv_shield_emerald.png",
-		groups = {armor_shield = 1, armor_heal = 12, armor_use = 400, physics_speed = 0.2, physics_jump = 0.2, physics_gravity = -0.02},
+		groups = {armor_shield = 1, armor_heal = 6, armor_use = 400, physics_speed = 0.2, physics_jump = 0.2, physics_gravity = -0.02},
 		armor_groups = {fleshy = 15},
 		damage_groups = {cracky = 2, snappy = 1, choppy = 1, level = 3},
 		reciprocate_damage = true,
