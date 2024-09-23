@@ -12,6 +12,7 @@ This is a fork of [this mod](https://gitlab.com/h2mm/underch) for the minetest g
 * Lava Crack generate permanent fire instead of lava source
 * Obscurite removed
 * Reduced the amount of slime and dynamic blocks
+* Added powerful but balanced tools, armor and arrows
 * Localization added
 
 ## Layers
