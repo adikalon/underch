@@ -4,10 +4,10 @@ minetest.register_tool("underch:sword_emerald", {
 	description = underch.S("Emerald Sword"),
 	inventory_image = "underch_sword_emerald.png",
 	tool_capabilities = {
-		full_punch_interval = 0.7,
+		full_punch_interval = 0.6,
 		max_drop_level = 1,
 		groupcaps = {
-			snappy={times = {[1] = 1.90, [2] = 0.90, [3] = 0.30}, uses = 20, maxlevel = 3},
+			snappy={times = {[1] = 0.95, [2] = 0.45, [3] = 0.15}, uses = 20, maxlevel = 3},
 		},
 		damage_groups = {fleshy = 16},
 	},
@@ -19,10 +19,10 @@ minetest.register_tool("underch:pick_emerald", {
 	description = underch.S("Emerald Pickaxe"),
 	inventory_image = "underch_pick_emerald.png",
 	tool_capabilities = {
-		full_punch_interval = 0.9,
+		full_punch_interval = 0.8,
 		max_drop_level = 3,
 		groupcaps = {
-			cracky = {times = {[1] = 2.0, [2] = 1.0, [3] = 0.50}, uses = 15, maxlevel = 3},
+			cracky = {times = {[1] = 1.0, [2] = 0.5, [3] = 0.25}, uses = 15, maxlevel = 3},
 		},
 		damage_groups = {fleshy = 10},
 	},
@@ -35,10 +35,10 @@ minetest.register_tool("underch:shovel_emerald", {
 	inventory_image = "underch_shovel_emerald.png",
 	wield_image = "underch_shovel_emerald.png^[transformR90",
 	tool_capabilities = {
-		full_punch_interval = 1.0,
+		full_punch_interval = 0.9,
 		max_drop_level = 1,
 		groupcaps = {
-			crumbly = {times = {[1] = 1.10, [2] = 0.50, [3] = 0.30}, uses = 15, maxlevel = 3},
+			crumbly = {times = {[1] = 0.55, [2] = 0.25, [3] = 0.15}, uses = 15, maxlevel = 3},
 		},
 		damage_groups = {fleshy = 8},
 	},
@@ -50,10 +50,10 @@ minetest.register_tool("underch:axe_emerald", {
 	description = underch.S("Emerald Axe"),
 	inventory_image = "underch_axe_emerald.png",
 	tool_capabilities = {
-		full_punch_interval = 0.9,
+		full_punch_interval = 0.8,
 		max_drop_level = 1,
 		groupcaps = {
-			choppy = {times = {[1] = 2.10, [2] = 0.90, [3] = 0.50}, uses = 15, maxlevel = 3},
+			choppy = {times = {[1] = 1.05, [2] = 0.45, [3] = 0.25}, uses = 15, maxlevel = 3},
 		},
 		damage_groups = {fleshy = 14},
 	},
@@ -65,10 +65,10 @@ minetest.register_tool("underch:sword_ruby", {
 	description = underch.S("Ruby Sword"),
 	inventory_image = "underch_sword_ruby.png",
 	tool_capabilities = {
-		full_punch_interval = 0.7,
+		full_punch_interval = 0.5,
 		max_drop_level = 1,
 		groupcaps = {
-			snappy={times = {[1] = 1.90, [2] = 0.90, [3] = 0.30}, uses = 10, maxlevel = 3},
+			snappy={times = {[1] = 0.95, [2] = 0.45, [3] = 0.15}, uses = 10, maxlevel = 3},
 		},
 		damage_groups = {fleshy = 32},
 	},
@@ -80,10 +80,10 @@ minetest.register_tool("underch:pick_ruby", {
 	description = underch.S("Ruby Pickaxe"),
 	inventory_image = "underch_pick_ruby.png",
 	tool_capabilities = {
-		full_punch_interval = 0.9,
+		full_punch_interval = 0.7,
 		max_drop_level = 3,
 		groupcaps = {
-			cracky = {times = {[1] = 2.0, [2] = 1.0, [3] = 0.50}, uses = 8, maxlevel = 3},
+			cracky = {times = {[1] = 1.0, [2] = 0.5, [3] = 0.25}, uses = 8, maxlevel = 3},
 		},
 		damage_groups = {fleshy = 20},
 	},
@@ -96,10 +96,10 @@ minetest.register_tool("underch:shovel_ruby", {
 	inventory_image = "underch_shovel_ruby.png",
 	wield_image = "underch_shovel_ruby.png^[transformR90",
 	tool_capabilities = {
-		full_punch_interval = 1.0,
+		full_punch_interval = 0.8,
 		max_drop_level = 1,
 		groupcaps = {
-			crumbly = {times = {[1] = 1.10, [2] = 0.50, [3] = 0.30}, uses = 8, maxlevel = 3},
+			crumbly = {times = {[1] = 0.55, [2] = 0.25, [3] = 0.15}, uses = 8, maxlevel = 3},
 		},
 		damage_groups = {fleshy = 16},
 	},
@@ -111,10 +111,10 @@ minetest.register_tool("underch:axe_ruby", {
 	description = underch.S("Ruby Axe"),
 	inventory_image = "underch_axe_ruby.png",
 	tool_capabilities = {
-		full_punch_interval = 0.9,
+		full_punch_interval = 0.7,
 		max_drop_level = 1,
 		groupcaps = {
-			choppy = {times = {[1] = 2.10, [2] = 0.90, [3] = 0.50}, uses = 8, maxlevel = 3},
+			choppy = {times = {[1] = 1.05, [2] = 0.45, [3] = 0.25}, uses = 8, maxlevel = 3},
 		},
 		damage_groups = {fleshy = 28},
 	},
@@ -126,10 +126,10 @@ minetest.register_tool("underch:sword_saphire", {
 	description = underch.S("Saphire Sword"),
 	inventory_image = "underch_sword_saphire.png",
 	tool_capabilities = {
-		full_punch_interval = 0.7,
+		full_punch_interval = 0.4,
 		max_drop_level = 1,
 		groupcaps = {
-			snappy={times = {[1] = 1.90, [2] = 0.90, [3] = 0.30}, uses = 5, maxlevel = 3},
+			snappy={times = {[1] = 0.95, [2] = 0.45, [3] = 0.15}, uses = 5, maxlevel = 3},
 		},
 		damage_groups = {fleshy = 64},
 	},
@@ -141,10 +141,10 @@ minetest.register_tool("underch:pick_saphire", {
 	description = underch.S("Saphire Pickaxe"),
 	inventory_image = "underch_pick_saphire.png",
 	tool_capabilities = {
-		full_punch_interval = 0.9,
+		full_punch_interval = 0.6,
 		max_drop_level = 3,
 		groupcaps = {
-			cracky = {times = {[1] = 2.0, [2] = 1.0, [3] = 0.50}, uses = 4, maxlevel = 3},
+			cracky = {times = {[1] = 1.0, [2] = 0.5, [3] = 0.25}, uses = 4, maxlevel = 3},
 		},
 		damage_groups = {fleshy = 40},
 	},
@@ -157,10 +157,10 @@ minetest.register_tool("underch:shovel_saphire", {
 	inventory_image = "underch_shovel_saphire.png",
 	wield_image = "underch_shovel_saphire.png^[transformR90",
 	tool_capabilities = {
-		full_punch_interval = 1.0,
+		full_punch_interval = 0.7,
 		max_drop_level = 1,
 		groupcaps = {
-			crumbly = {times = {[1] = 1.10, [2] = 0.50, [3] = 0.30}, uses = 4, maxlevel = 3},
+			crumbly = {times = {[1] = 0.55, [2] = 0.25, [3] = 0.15}, uses = 4, maxlevel = 3},
 		},
 		damage_groups = {fleshy = 32},
 	},
@@ -172,10 +172,10 @@ minetest.register_tool("underch:axe_saphire", {
 	description = underch.S("Saphire Axe"),
 	inventory_image = "underch_axe_saphire.png",
 	tool_capabilities = {
-		full_punch_interval = 0.9,
+		full_punch_interval = 0.6,
 		max_drop_level = 1,
 		groupcaps = {
-			choppy = {times = {[1] = 2.10, [2] = 0.90, [3] = 0.50}, uses = 4, maxlevel = 3},
+			choppy = {times = {[1] = 1.05, [2] = 0.45, [3] = 0.25}, uses = 4, maxlevel = 3},
 		},
 		damage_groups = {fleshy = 56},
 	},
@@ -293,44 +293,6 @@ minetest.register_craft({
 	}
 })
 
--- tt
-
-if underch.have_tt then
-	tt.register_snippet(function(itemstring)
-		local def = minetest.registered_items[itemstring]
-		local prefix = underch.S("Superpower")
-		local desc
-
-		if def.name == "underch:sword_emerald" then
-			desc = minetest.colorize("#AAFFFF",  prefix .. ": " .. underch.S("Silk Touch"))
-		elseif def.name == "underch:pick_emerald" then
-			desc = minetest.colorize("#AAFFFF",  prefix .. ": " .. underch.S("Silk Touch"))
-		elseif def.name == "underch:shovel_emerald" then
-			desc = minetest.colorize("#AAFFFF",  prefix .. ": " .. underch.S("Silk Touch"))
-		elseif def.name == "underch:axe_emerald" then
-			desc = minetest.colorize("#AAFFFF",  prefix .. ": " .. underch.S("Silk Touch"))
-		elseif def.name == "underch:sword_ruby" then
-			desc = minetest.colorize("#AAFFFF",  prefix .. ": " .. underch.S("Recycling"))
-		elseif def.name == "underch:pick_ruby" then
-			desc = minetest.colorize("#AAFFFF",  prefix .. ": " .. underch.S("Recycling"))
-		elseif def.name == "underch:shovel_ruby" then
-			desc = minetest.colorize("#AAFFFF",  prefix .. ": " .. underch.S("Recycling"))
-		elseif def.name == "underch:axe_ruby" then
-			desc = minetest.colorize("#AAFFFF",  prefix .. ": " .. underch.S("Recycling"))
-		elseif def.name == "underch:sword_saphire" then
-			desc = minetest.colorize("#AAFFFF",  prefix .. ": " .. underch.S("Multiplied Drop"))
-		elseif def.name == "underch:pick_saphire" then
-			desc = minetest.colorize("#AAFFFF",  prefix .. ": " .. underch.S("Multiplied Drop"))
-		elseif def.name == "underch:shovel_saphire" then
-			desc = minetest.colorize("#AAFFFF",  prefix .. ": " .. underch.S("Multiplied Drop"))
-		elseif def.name == "underch:axe_saphire" then
-			desc = minetest.colorize("#AAFFFF",  prefix .. ": " .. underch.S("Multiplied Drop"))
-		end
-
-		return desc
-	end)
-end
-
 -- toolranks
 
 if underch.have_toolranks then
@@ -406,33 +368,3 @@ if underch.have_toolranks then
 		after_use = toolranks.new_afteruse
 	})
 end
-
-minetest.register_on_dignode(function(pos, node, player, digger)
-	-- TODO: attempt to index local 'player' (a nil value)
-	local tool = player:get_wielded_item():get_name()
-
-	if
-		tool == "underch:sword_emerald"
-		or tool == "underch:pick_emerald"
-		or tool == "underch:shovel_emerald"
-		or tool == "underch:axe_emerald"
-	then
-		player:get_inventory():add_item("main", node)
-
-		return nil
-	elseif
-		tool == "underch:sword_saphire"
-		or tool == "underch:pick_saphire"
-		or tool == "underch:shovel_saphire"
-		or tool == "underch:axe_saphire"
-	then
-		local drops = minetest.get_node_drops(node.name)
-
-		for _, drop in ipairs(drops) do
-			local itemstack = ItemStack(drop .. " " .. math.random(0, 2))
-			player:get_inventory():add_item("main", itemstack)
-		end
-
-		return nil
-	end
-end)

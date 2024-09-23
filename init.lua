@@ -20,7 +20,6 @@ underch.have_xtraores = minetest.get_modpath("xtraores") ~= nil
 underch.have_alien_material = minetest.get_modpath("alien_material") ~= nil
 underch.have_magic_materials = minetest.get_modpath("magic_materials") ~= nil
 underch.have_toolranks = minetest.get_modpath("toolranks") ~= nil
-underch.have_tt = minetest.get_modpath("tt") ~= nil
 underch.have_x_bows = minetest.get_modpath("x_bows") ~= nil
 underch.have_3d_armor = minetest.get_modpath("3d_armor") ~= nil
 underch.have_shields = minetest.get_modpath("shields") ~= nil
