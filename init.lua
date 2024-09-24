@@ -184,5 +184,5 @@ minetest.register_abm({
 dofile(underch.modpath .. "/tools.lua")
 dofile(underch.modpath .. "/armor.lua")
 dofile(underch.modpath .. "/arrows.lua")
-dofile(underch.modpath .. "/gifts.lua")
+-- dofile(underch.modpath .. "/gifts.lua")
 dofile(underch.modpath .. "/drops.lua")
