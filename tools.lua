@@ -7,7 +7,7 @@ minetest.register_tool("underch:sword_emerald", {
 		full_punch_interval = 0.6,
 		max_drop_level = 1,
 		groupcaps = {
-			snappy={times = {[1] = 0.95, [2] = 0.45, [3] = 0.15}, uses = 20, maxlevel = 3},
+			snappy={times = {[1] = 0.95, [2] = 0.45, [3] = 0.15}, uses = 5, maxlevel = 3},
 		},
 		damage_groups = {fleshy = 16},
 	},
@@ -68,7 +68,7 @@ minetest.register_tool("underch:sword_ruby", {
 		full_punch_interval = 0.5,
 		max_drop_level = 1,
 		groupcaps = {
-			snappy={times = {[1] = 0.95, [2] = 0.45, [3] = 0.15}, uses = 10, maxlevel = 3},
+			snappy={times = {[1] = 0.95, [2] = 0.45, [3] = 0.15}, uses = 3, maxlevel = 3},
 		},
 		damage_groups = {fleshy = 32},
 	},
@@ -129,7 +129,7 @@ minetest.register_tool("underch:sword_saphire", {
 		full_punch_interval = 0.4,
 		max_drop_level = 1,
 		groupcaps = {
-			snappy={times = {[1] = 0.95, [2] = 0.45, [3] = 0.15}, uses = 5, maxlevel = 3},
+			snappy={times = {[1] = 0.95, [2] = 0.45, [3] = 0.15}, uses = 1, maxlevel = 3},
 		},
 		damage_groups = {fleshy = 64},
 	},
