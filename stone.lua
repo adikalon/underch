@@ -239,6 +239,7 @@ function underch.stone.register_stone(id, mossy, names)
 	underch.stone.defs[id].with_iron = minetest.get_content_id(with_iron)
 	underch.stone.defs[id].with_copper = minetest.get_content_id(with_copper)
 	underch.stone.defs[id].with_tin = minetest.get_content_id(with_tin)
+	underch.stone.defs[id].with_mese = minetest.get_content_id(with_mese)
 	underch.stone.defs[id].with_gold = minetest.get_content_id(with_gold)
 	underch.stone.defs[id].with_diamond = minetest.get_content_id(with_diamond)
 
