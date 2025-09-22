@@ -159,15 +159,15 @@ function underch.use_stone(vi, data, id)
 	if underch.hardcore_ores then
 		b_coal = underch.functions.ore_reducer(base_stone, underch.stone.defs[id].with_coal, 0.5)
 		b_iron = underch.functions.ore_reducer(base_stone, underch.stone.defs[id].with_iron, 0.5)
-		b_copper = underch.functions.ore_reducer(base_stone, underch.stone.defs[id].with_copper, 0.95)
-		b_tin = underch.functions.ore_reducer(base_stone, underch.stone.defs[id].with_tin, 0.95)
+		b_copper = underch.functions.ore_reducer(base_stone, underch.stone.defs[id].with_copper, 0.98)
+		b_tin = underch.functions.ore_reducer(base_stone, underch.stone.defs[id].with_tin, 0.98)
 		b_mese = base_stone
 		b_gold = base_stone
-		b_diamond = underch.functions.ore_reducer(base_stone, underch.stone.defs[id].with_diamond, 0.5)
+		b_diamond = underch.functions.ore_reducer(base_stone, underch.stone.defs[id].with_diamond, 0.4)
 		b_meseblock = base_stone
 
 		if not underch.have_xnether then
-			b_gold = underch.functions.ore_reducer(base_stone, underch.stone.defs[id].with_gold, 0.95)
+			b_gold = underch.functions.ore_reducer(base_stone, underch.stone.defs[id].with_gold, 0.98)
 			b_mese = underch.functions.ore_reducer(base_stone, underch.stone.defs[id].with_mese, 0.5)
 			b_meseblock = underch.functions.ore_reducer(base_stone, c_mese_block, 0.5)
 		end
