@@ -141,15 +141,8 @@ local c_stone_with_mese = minetest.get_content_id("default:stone_with_mese")
 local c_stone_with_gold = minetest.get_content_id("default:stone_with_gold")
 local c_stone_with_diamond = minetest.get_content_id("default:stone_with_diamond")
 local c_mese_block = minetest.get_content_id("default:mese")
-local c_alien_mese_ore = nil
-local c_alien_diamond_ore = nil
 local c_stone_with_februm = nil
 local c_stone_with_egerum = nil
-
-if underch.have_alien_material then
-	c_alien_mese_ore = minetest.get_content_id("alien_material:alien_mese_ore")
-	c_alien_diamond_ore = minetest.get_content_id("alien_material:alien_diamond_ore")
-end
 
 if underch.have_magic_materials then
 	c_stone_with_februm = minetest.get_content_id("magic_materials:stone_with_februm")
@@ -203,11 +196,6 @@ function underch.use_stone(vi, data, id)
 		underch.functions.replace(vi, data, c_stone_with_mese, underch.stone.defs[id].with_mese)
 		underch.functions.replace(vi, data, c_stone_with_gold, underch.stone.defs[id].with_gold)
 		underch.functions.replace(vi, data, c_stone_with_diamond, underch.stone.defs[id].with_diamond)
-
-		if underch.have_alien_material then
-			underch.functions.replace(vi, data, c_alien_mese_ore, underch.stone.defs[id].alien_mese_ore)
-			underch.functions.replace(vi, data, c_alien_diamond_ore, underch.stone.defs[id].alien_diamond_ore)
-		end
 
 		if underch.have_magic_materials then
 			underch.functions.replace(vi, data, c_stone_with_februm, underch.stone.defs[id].with_februm)

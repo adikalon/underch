@@ -13,8 +13,6 @@ function underch.stone.register_stone(id, mossy, names)
 	local with_mese = "underch:" .. id .. "_with_mese"
 	local with_gold = "underch:" .. id .. "_with_gold"
 	local with_diamond = "underch:" .. id .. "_with_diamond"
-	local alien_mese_ore = "underch:" .. id .. "_alien_mese_ore"
-	local alien_diamond_ore = "underch:" .. id .. "_alien_diamond_ore"
 	local with_februm = "underch:" .. id .. "_with_februm"
 	local with_egerum = "underch:" .. id .. "_with_egerum"
 
@@ -112,28 +110,6 @@ function underch.stone.register_stone(id, mossy, names)
 		drop = "default:diamond",
 		sounds = default.node_sound_stone_defaults(),
 	})
-
-	if underch.have_alien_material then
-		minetest.register_node(alien_mese_ore, {
-			description = names.alien_mese,
-			tiles = {"underch_" .. id .. ".png^alien_mese_ore.png"},
-			groups = {cracky = 1},
-			is_ground_content = true,
-			legacy_mineral = true,
-			drop = "alien_material:alien_mese",
-			sounds = default.node_sound_stone_defaults(),
-		})
-
-		minetest.register_node(alien_diamond_ore, {
-			description = names.alien_diamond,
-			tiles = {"underch_" .. id .. ".png^alien_diamond_ore.png"},
-			groups = {cracky = 1},
-			drop = "alien_material:alien_diamond",
-			is_ground_content = true,
-			legacy_mineral = true,
-			sounds = default.node_sound_stone_defaults(),
-		})
-	end
 
 	if underch.have_magic_materials then
 		minetest.register_node(with_februm, {
@@ -249,11 +225,6 @@ function underch.stone.register_stone(id, mossy, names)
 
 	underch.stone.defs[id].with_diamond = minetest.get_content_id(with_diamond)
 
-	if underch.have_alien_material then
-		underch.stone.defs[id].alien_mese_ore = minetest.get_content_id(alien_mese_ore)
-		underch.stone.defs[id].alien_diamond_ore = minetest.get_content_id(alien_diamond_ore)
-	end
-
 	if underch.have_magic_materials then
 		underch.stone.defs[id].with_februm = minetest.get_content_id(with_februm)
 		underch.stone.defs[id].with_egerum = minetest.get_content_id(with_egerum)
@@ -334,8 +305,6 @@ underch.stone.register_stone("afualite", nil, {
 	mese = underch.S("Afualite Mese Ore"),
 	gold = underch.S("Afualite Gold Ore"),
 	diamond = underch.S("Afualite Diamond Ore"),
-	alien_mese = underch.S("Afualite Alien Mese Ore"),
-	alien_diamond = underch.S("Afualite Alien Diamond Ore"),
 	februm = underch.S("Afualite Febdrum Ore"),
 	egerum = underch.S("Afualite Egerum Ore"),
 	mossy_cobble = underch.S(""),
@@ -387,8 +356,6 @@ underch.stone.register_stone("amphibolite", "Mossy", {
 	mese = underch.S("Amphibolite Mese Ore"),
 	gold = underch.S("Amphibolite Gold Ore"),
 	diamond = underch.S("Amphibolite Diamond Ore"),
-	alien_mese = underch.S("Amphibolite Alien Mese Ore"),
-	alien_diamond = underch.S("Amphibolite Alien Diamond Ore"),
 	februm = underch.S("Amphibolite Febdrum Ore"),
 	egerum = underch.S("Amphibolite Egerum Ore"),
 	mossy_cobble = underch.S("Mossy Amphibolite Cobble"),
@@ -440,8 +407,6 @@ underch.stone.register_stone("andesite", "Mossy", {
 	mese = underch.S("Andesite Mese Ore"),
 	gold = underch.S("Andesite Gold Ore"),
 	diamond = underch.S("Andesite Diamond Ore"),
-	alien_mese = underch.S("Andesite Alien Mese Ore"),
-	alien_diamond = underch.S("Andesite Alien Diamond Ore"),
 	februm = underch.S("Andesite Febdrum Ore"),
 	egerum = underch.S("Andesite Egerum Ore"),
 	mossy_cobble = underch.S("Mossy Andesite Cobble"),
@@ -493,8 +458,6 @@ underch.stone.register_stone("aplite", "Mossy", {
 	mese = underch.S("Aplite Mese Ore"),
 	gold = underch.S("Aplite Gold Ore"),
 	diamond = underch.S("Aplite Diamond Ore"),
-	alien_mese = underch.S("Aplite Alien Mese Ore"),
-	alien_diamond = underch.S("Aplite Alien Diamond Ore"),
 	februm = underch.S("Aplite Febdrum Ore"),
 	egerum = underch.S("Aplite Egerum Ore"),
 	mossy_cobble = underch.S("Mossy Aplite Cobble"),
@@ -546,8 +509,6 @@ underch.stone.register_stone("basalt", "Mossy", {
 	mese = underch.S("Basalt Mese Ore"),
 	gold = underch.S("Basalt Gold Ore"),
 	diamond = underch.S("Basalt Diamond Ore"),
-	alien_mese = underch.S("Basalt Alien Mese Ore"),
-	alien_diamond = underch.S("Basalt Alien Diamond Ore"),
 	februm = underch.S("Basalt Febdrum Ore"),
 	egerum = underch.S("Basalt Egerum Ore"),
 	mossy_cobble = underch.S("Mossy Basalt Cobble"),
@@ -599,8 +560,6 @@ underch.stone.register_stone("dark_vindesite", "Mossy", {
 	mese = underch.S("Dark Vindesite Mese Ore"),
 	gold = underch.S("Dark Vindesite Gold Ore"),
 	diamond = underch.S("Dark Vindesite Diamond Ore"),
-	alien_mese = underch.S("Dark Vindesite Alien Mese Ore"),
-	alien_diamond = underch.S("Dark Vindesite Alien Diamond Ore"),
 	februm = underch.S("Dark Vindesite Febdrum Ore"),
 	egerum = underch.S("Dark Vindesite Egerum Ore"),
 	mossy_cobble = underch.S("Mossy Dark Vindesite Cobble"),
@@ -652,8 +611,6 @@ underch.stone.register_stone("diorite", "Mossy", {
 	mese = underch.S("Diorite Mese Ore"),
 	gold = underch.S("Diorite Gold Ore"),
 	diamond = underch.S("Diorite Diamond Ore"),
-	alien_mese = underch.S("Diorite Alien Mese Ore"),
-	alien_diamond = underch.S("Diorite Alien Diamond Ore"),
 	februm = underch.S("Diorite Febdrum Ore"),
 	egerum = underch.S("Diorite Egerum Ore"),
 	mossy_cobble = underch.S("Mossy Diorite Cobble"),
@@ -705,8 +662,6 @@ underch.stone.register_stone("dolomite", "Mossy", {
 	mese = underch.S("Dolomite Mese Ore"),
 	gold = underch.S("Dolomite Gold Ore"),
 	diamond = underch.S("Dolomite Diamond Ore"),
-	alien_mese = underch.S("Dolomite Alien Mese Ore"),
-	alien_diamond = underch.S("Dolomite Alien Diamond Ore"),
 	februm = underch.S("Dolomite Febdrum Ore"),
 	egerum = underch.S("Dolomite Egerum Ore"),
 	mossy_cobble = underch.S("Mossy Dolomite Cobble"),
@@ -758,8 +713,6 @@ underch.stone.register_stone("emutite", nil, {
 	mese = underch.S("Emutite Mese Ore"),
 	gold = underch.S("Emutite Gold Ore"),
 	diamond = underch.S("Emutite Diamond Ore"),
-	alien_mese = underch.S("Emutite Alien Mese Ore"),
-	alien_diamond = underch.S("Emutite Alien Diamond Ore"),
 	februm = underch.S("Emutite Febdrum Ore"),
 	egerum = underch.S("Emutite Egerum Ore"),
 	mossy_cobble = underch.S(""),
@@ -811,8 +764,6 @@ underch.stone.register_stone("gabbro", "Mossy", {
 	mese = underch.S("Gabbro Mese Ore"),
 	gold = underch.S("Gabbro Gold Ore"),
 	diamond = underch.S("Gabbro Diamond Ore"),
-	alien_mese = underch.S("Gabbro Alien Mese Ore"),
-	alien_diamond = underch.S("Gabbro Alien Diamond Ore"),
 	februm = underch.S("Gabbro Febdrum Ore"),
 	egerum = underch.S("Gabbro Egerum Ore"),
 	mossy_cobble = underch.S("Mossy Gabbro Cobble"),
@@ -864,8 +815,6 @@ underch.stone.register_stone("gneiss", "Mossy", {
 	mese = underch.S("Gneiss Mese Ore"),
 	gold = underch.S("Gneiss Gold Ore"),
 	diamond = underch.S("Gneiss Diamond Ore"),
-	alien_mese = underch.S("Gneiss Alien Mese Ore"),
-	alien_diamond = underch.S("Gneiss Alien Diamond Ore"),
 	februm = underch.S("Gneiss Febdrum Ore"),
 	egerum = underch.S("Gneiss Egerum Ore"),
 	mossy_cobble = underch.S("Mossy Gneiss Cobble"),
@@ -917,8 +866,6 @@ underch.stone.register_stone("granite", "Mossy", {
 	mese = underch.S("Granite Mese Ore"),
 	gold = underch.S("Granite Gold Ore"),
 	diamond = underch.S("Granite Diamond Ore"),
-	alien_mese = underch.S("Granite Alien Mese Ore"),
-	alien_diamond = underch.S("Granite Alien Diamond Ore"),
 	februm = underch.S("Granite Febdrum Ore"),
 	egerum = underch.S("Granite Egerum Ore"),
 	mossy_cobble = underch.S("Mossy Granite Cobble"),
@@ -970,8 +917,6 @@ underch.stone.register_stone("green_slimestone", nil, {
 	mese = underch.S("Green Slimestone Mese Ore"),
 	gold = underch.S("Green Slimestone Gold Ore"),
 	diamond = underch.S("Green Slimestone Diamond Ore"),
-	alien_mese = underch.S("Green Slimestone Alien Mese Ore"),
-	alien_diamond = underch.S("Green Slimestone Alien Diamond Ore"),
 	februm = underch.S("Green Slimestone Febdrum Ore"),
 	egerum = underch.S("Green Slimestone Egerum Ore"),
 	mossy_cobble = underch.S(""),
@@ -1023,8 +968,6 @@ underch.stone.register_stone("hektorite", nil, {
 	mese = underch.S("Hektorite Mese Ore"),
 	gold = underch.S("Hektorite Gold Ore"),
 	diamond = underch.S("Hektorite Diamond Ore"),
-	alien_mese = underch.S("Hektorite Alien Mese Ore"),
-	alien_diamond = underch.S("Hektorite Alien Diamond Ore"),
 	februm = underch.S("Hektorite Febdrum Ore"),
 	egerum = underch.S("Hektorite Egerum Ore"),
 	mossy_cobble = underch.S(""),
@@ -1076,8 +1019,6 @@ underch.stone.register_stone("limestone", "Mossy", {
 	mese = underch.S("Limestone Mese Ore"),
 	gold = underch.S("Limestone Gold Ore"),
 	diamond = underch.S("Limestone Diamond Ore"),
-	alien_mese = underch.S("Limestone Alien Mese Ore"),
-	alien_diamond = underch.S("Limestone Alien Diamond Ore"),
 	februm = underch.S("Limestone Febdrum Ore"),
 	egerum = underch.S("Limestone Egerum Ore"),
 	mossy_cobble = underch.S("Mossy Limestone Cobble"),
@@ -1129,8 +1070,6 @@ underch.stone.register_stone("marble", "Mossy", {
 	mese = underch.S("Marble Mese Ore"),
 	gold = underch.S("Marble Gold Ore"),
 	diamond = underch.S("Marble Diamond Ore"),
-	alien_mese = underch.S("Marble Alien Mese Ore"),
-	alien_diamond = underch.S("Marble Alien Diamond Ore"),
 	februm = underch.S("Marble Febdrum Ore"),
 	egerum = underch.S("Marble Egerum Ore"),
 	mossy_cobble = underch.S("Mossy Marble Cobble"),
@@ -1182,8 +1121,6 @@ underch.stone.register_stone("omphyrite", nil, {
 	mese = underch.S("Omphyrite Mese Ore"),
 	gold = underch.S("Omphyrite Gold Ore"),
 	diamond = underch.S("Omphyrite Diamond Ore"),
-	alien_mese = underch.S("Omphyrite Alien Mese Ore"),
-	alien_diamond = underch.S("Omphyrite Alien Diamond Ore"),
 	februm = underch.S("Omphyrite Febdrum Ore"),
 	egerum = underch.S("Omphyrite Egerum Ore"),
 	mossy_cobble = underch.S(""),
@@ -1235,8 +1172,6 @@ underch.stone.register_stone("pegmatite", "Mossy", {
 	mese = underch.S("Pegmatite Mese Ore"),
 	gold = underch.S("Pegmatite Gold Ore"),
 	diamond = underch.S("Pegmatite Diamond Ore"),
-	alien_mese = underch.S("Pegmatite Alien Mese Ore"),
-	alien_diamond = underch.S("Pegmatite Alien Diamond Ore"),
 	februm = underch.S("Pegmatite Febdrum Ore"),
 	egerum = underch.S("Pegmatite Egerum Ore"),
 	mossy_cobble = underch.S("Mossy Pegmatite Cobble"),
@@ -1288,8 +1223,6 @@ underch.stone.register_stone("peridotite", "Mossy", {
 	mese = underch.S("Peridotite Mese Ore"),
 	gold = underch.S("Peridotite Gold Ore"),
 	diamond = underch.S("Peridotite Diamond Ore"),
-	alien_mese = underch.S("Peridotite Alien Mese Ore"),
-	alien_diamond = underch.S("Peridotite Alien Diamond Ore"),
 	februm = underch.S("Peridotite Febdrum Ore"),
 	egerum = underch.S("Peridotite Egerum Ore"),
 	mossy_cobble = underch.S("Mossy Peridotite Cobble"),
@@ -1341,8 +1274,6 @@ underch.stone.register_stone("phonolite", "Mossy", {
 	mese = underch.S("Phonolite Mese Ore"),
 	gold = underch.S("Phonolite Gold Ore"),
 	diamond = underch.S("Phonolite Diamond Ore"),
-	alien_mese = underch.S("Phonolite Alien Mese Ore"),
-	alien_diamond = underch.S("Phonolite Alien Diamond Ore"),
 	februm = underch.S("Phonolite Febdrum Ore"),
 	egerum = underch.S("Phonolite Egerum Ore"),
 	mossy_cobble = underch.S("Mossy Phonolite Cobble"),
@@ -1394,8 +1325,6 @@ underch.stone.register_stone("phylite", "Mossy", {
 	mese = underch.S("Phylite Mese Ore"),
 	gold = underch.S("Phylite Gold Ore"),
 	diamond = underch.S("Phylite Diamond Ore"),
-	alien_mese = underch.S("Phylite Alien Mese Ore"),
-	alien_diamond = underch.S("Phylite Alien Diamond Ore"),
 	februm = underch.S("Phylite Febdrum Ore"),
 	egerum = underch.S("Phylite Egerum Ore"),
 	mossy_cobble = underch.S("Mossy Phylite Cobble"),
@@ -1447,8 +1376,6 @@ underch.stone.register_stone("purple_slimestone", nil, {
 	mese = underch.S("Purple Slimestone Mese Ore"),
 	gold = underch.S("Purple Slimestone Gold Ore"),
 	diamond = underch.S("Purple Slimestone Diamond Ore"),
-	alien_mese = underch.S("Purple Slimestone Alien Mese Ore"),
-	alien_diamond = underch.S("Purple Slimestone Alien Diamond Ore"),
 	februm = underch.S("Purple Slimestone Febdrum Ore"),
 	egerum = underch.S("Purple Slimestone Egerum Ore"),
 	mossy_cobble = underch.S(""),
@@ -1500,8 +1427,6 @@ underch.stone.register_stone("quartzite", "Mossy", {
 	mese = underch.S("Quartzite Mese Ore"),
 	gold = underch.S("Quartzite Gold Ore"),
 	diamond = underch.S("Quartzite Diamond Ore"),
-	alien_mese = underch.S("Quartzite Alien Mese Ore"),
-	alien_diamond = underch.S("Quartzite Alien Diamond Ore"),
 	februm = underch.S("Quartzite Febdrum Ore"),
 	egerum = underch.S("Quartzite Egerum Ore"),
 	mossy_cobble = underch.S("Mossy Quartzite Cobble"),
@@ -1553,8 +1478,6 @@ underch.stone.register_stone("red_slimestone", nil, {
 	mese = underch.S("Red Slimestone Mese Ore"),
 	gold = underch.S("Red Slimestone Gold Ore"),
 	diamond = underch.S("Red Slimestone Diamond Ore"),
-	alien_mese = underch.S("Red Slimestone Alien Mese Ore"),
-	alien_diamond = underch.S("Red Slimestone Alien Diamond Ore"),
 	februm = underch.S("Red Slimestone Febdrum Ore"),
 	egerum = underch.S("Red Slimestone Egerum Ore"),
 	mossy_cobble = underch.S(""),
@@ -1606,8 +1529,6 @@ underch.stone.register_stone("schist", "Mossy", {
 	mese = underch.S("Schist Mese Ore"),
 	gold = underch.S("Schist Gold Ore"),
 	diamond = underch.S("Schist Diamond Ore"),
-	alien_mese = underch.S("Schist Alien Mese Ore"),
-	alien_diamond = underch.S("Schist Alien Diamond Ore"),
 	februm = underch.S("Schist Febdrum Ore"),
 	egerum = underch.S("Schist Egerum Ore"),
 	mossy_cobble = underch.S("Mossy Schist Cobble"),
@@ -1659,8 +1580,6 @@ underch.stone.register_stone("sichamine", "Weedy", {
 	mese = underch.S("Sichamine Mese Ore"),
 	gold = underch.S("Sichamine Gold Ore"),
 	diamond = underch.S("Sichamine Diamond Ore"),
-	alien_mese = underch.S("Sichamine Alien Mese Ore"),
-	alien_diamond = underch.S("Sichamine Alien Diamond Ore"),
 	februm = underch.S("Sichamine Febdrum Ore"),
 	egerum = underch.S("Sichamine Egerum Ore"),
 	mossy_cobble = underch.S("Weedy Sichamine Cobble"),
@@ -1712,8 +1631,6 @@ underch.stone.register_stone("slate", "Mossy", {
 	mese = underch.S("Slate Mese Ore"),
 	gold = underch.S("Slate Gold Ore"),
 	diamond = underch.S("Slate Diamond Ore"),
-	alien_mese = underch.S("Slate Alien Mese Ore"),
-	alien_diamond = underch.S("Slate Alien Diamond Ore"),
 	februm = underch.S("Slate Febdrum Ore"),
 	egerum = underch.S("Slate Egerum Ore"),
 	mossy_cobble = underch.S("Mossy Slate Cobble"),
@@ -1765,8 +1682,6 @@ underch.stone.register_stone("vindesite", "Mossy", {
 	mese = underch.S("Vindesite Mese Ore"),
 	gold = underch.S("Vindesite Gold Ore"),
 	diamond = underch.S("Vindesite Diamond Ore"),
-	alien_mese = underch.S("Vindesite Alien Mese Ore"),
-	alien_diamond = underch.S("Vindesite Alien Diamond Ore"),
 	februm = underch.S("Vindesite Febdrum Ore"),
 	egerum = underch.S("Vindesite Egerum Ore"),
 	mossy_cobble = underch.S("Mossy Vindesite Cobble"),
