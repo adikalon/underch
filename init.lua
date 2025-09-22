@@ -27,7 +27,7 @@ underch.have_handle_schematics = minetest.get_modpath("handle_schematics") ~= ni
 underch.have_nether = minetest.get_modpath("nether") ~= nil
 underch.have_xnether = minetest.get_modpath("xnether") ~= nil
 
-underch.hardcore_ores = minetest.settings:get_bool("underch_hardcore_ores", true)
+underch.balanced_ores = minetest.settings:get_bool("underch_balanced_ores", true)
 
 underch.layers = {
 	layer_1 = tonumber(minetest.settings:get("underch_y_layer_1")),
