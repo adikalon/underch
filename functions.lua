@@ -66,21 +66,6 @@ function underch.functions.get_pressure(h, r)
 	return pressure
 end
 
-if underch.polynomial_pressure then
-	underch.functions.get_pressure = function(h, r)
-		local x = h / -1000
-		r = (r+1);
-		-- Some precalculated magic numbers
-		local top = -0.5 + (x + 1.0)*(0.1388888889 + (x - 0.2)*(-0.01543209878 + (x - 2.0)*(0.0006921306369 + (x - 12.0)*(-0.00001692713955 + (x - 20.0)*(1.781544043E-7 + (x - 25.0)*2.521866255E-9)))))
-		local bottom = -0.5 + (x + 1.0)*(0.08333333335 + (x - 1.0)*(-0.005892255893 + (x - 10.0)*(0.0002759423812 + (x - 20.0)*(-0.000008676346390 + (x - 25.0)*(1.290608758E-7 + (x - 32.0)*6.980982443E-9)))))
-		local pressure = (r*top + (1-r)*bottom)*2
-		if h > 0 then
-			pressure = math.min(pressure, -0.8)
-		end
-		return pressure
-	end
-end
-
 function underch.functions.get_biome(darkness, water, pressure, y)
 	-- darkness = darkness * 2
 	-- water = water * 2

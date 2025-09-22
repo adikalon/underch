@@ -29,9 +29,6 @@ underch.have_xnether = minetest.get_modpath("xnether") ~= nil
 
 underch.hardcore_ores = minetest.settings:get_bool("underch_hardcore_ores", true)
 
-underch.use_jit = minetest.settings:get_bool("underch_ores_jit", false)
-underch.polynomial_pressure = minetest.settings:get_bool("underch_polynomial_pressure", false)
-
 underch.layers = {
 	layer_1 = tonumber(minetest.settings:get("underch_y_layer_1")),
 	layer_2 = tonumber(minetest.settings:get("underch_y_layer_2")),
@@ -63,13 +60,9 @@ end
 dofile(underch.modpath .. "/dynamic.lua")
 dofile(underch.modpath .. "/functions.lua")
 
-if underch.use_jit then
-	dofile(underch.modpath .. "/jit.lua")
-else
-	underch.jit = {}
-	function underch.jit.dig_shadow(pos, oldnode, oldmetadata, digger)
-		--ores-JIT not used
-	end
+underch.jit = {}
+function underch.jit.dig_shadow(pos, oldnode, oldmetadata, digger)
+	--ores-JIT not used
 end
 
 dofile(underch.modpath .. "/nodes.lua")
