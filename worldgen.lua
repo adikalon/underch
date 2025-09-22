@@ -140,6 +140,7 @@ local c_stone_with_tin = minetest.get_content_id("default:stone_with_tin")
 local c_stone_with_mese = minetest.get_content_id("default:stone_with_mese")
 local c_stone_with_gold = minetest.get_content_id("default:stone_with_gold")
 local c_stone_with_diamond = minetest.get_content_id("default:stone_with_diamond")
+local c_mese_block = minetest.get_content_id("default:mese")
 local c_alien_mese_ore = nil
 local c_alien_diamond_ore = nil
 local c_stone_with_februm = nil
@@ -156,26 +157,62 @@ if underch.have_magic_materials then
 end
 
 function underch.use_stone(vi, data, id)
+	base_stone = underch.stone.defs[id].base
 	underch.functions.replace(vi, data, c_stone, underch.stone.defs[id].base)
 	underch.functions.replace(vi, data, c_cobble, underch.stone.defs[id].cobble)
 	underch.functions.replace(vi, data, c_mossycobble, underch.stone.defs[id].mossy)
 	underch.functions.replace(vi, data, c_cobblestair, underch.stone.defs[id].stair)
-	underch.functions.replace(vi, data, c_stone_with_coal, underch.stone.defs[id].with_coal)
-	underch.functions.replace(vi, data, c_stone_with_iron, underch.stone.defs[id].with_iron)
-	underch.functions.replace(vi, data, c_stone_with_copper, underch.stone.defs[id].with_copper)
-	underch.functions.replace(vi, data, c_stone_with_tin, underch.stone.defs[id].with_tin)
-	underch.functions.replace(vi, data, c_stone_with_mese, underch.stone.defs[id].with_mese)
-	underch.functions.replace(vi, data, c_stone_with_gold, underch.stone.defs[id].with_gold)
-	underch.functions.replace(vi, data, c_stone_with_diamond, underch.stone.defs[id].with_diamond)
 
-	if underch.have_alien_material then
-		underch.functions.replace(vi, data, c_alien_mese_ore, underch.stone.defs[id].alien_mese_ore)
-		underch.functions.replace(vi, data, c_alien_diamond_ore, underch.stone.defs[id].alien_diamond_ore)
-	end
+	if underch.hardcore_ores then
+		b_coal = underch.functions.ore_reducer(base_stone, underch.stone.defs[id].with_coal, 0.5)
+		b_iron = underch.functions.ore_reducer(base_stone, underch.stone.defs[id].with_iron, 0.5)
+		b_copper = underch.functions.ore_reducer(base_stone, underch.stone.defs[id].with_copper, 0.95)
+		b_tin = underch.functions.ore_reducer(base_stone, underch.stone.defs[id].with_tin, 0.95)
+		b_mese = base_stone
+		b_gold = base_stone
+		b_diamond = underch.functions.ore_reducer(base_stone, underch.stone.defs[id].with_diamond, 0.5)
+		b_meseblock = base_stone
 
-	if underch.have_magic_materials then
-		underch.functions.replace(vi, data, c_stone_with_februm, underch.stone.defs[id].with_februm)
-		underch.functions.replace(vi, data, c_stone_with_egerum, underch.stone.defs[id].with_egerum)
+		if not underch.have_xnether then
+			b_gold = underch.functions.ore_reducer(base_stone, underch.stone.defs[id].with_gold, 0.95)
+			b_mese = underch.functions.ore_reducer(base_stone, underch.stone.defs[id].with_mese, 0.5)
+			b_meseblock = underch.functions.ore_reducer(base_stone, c_mese_block, 0.5)
+		end
+
+		underch.functions.replace(vi, data, c_stone_with_coal, b_coal)
+		underch.functions.replace(vi, data, c_stone_with_iron, b_iron)
+		underch.functions.replace(vi, data, c_stone_with_copper, b_copper)
+		underch.functions.replace(vi, data, c_stone_with_tin, b_tin)
+		underch.functions.replace(vi, data, c_stone_with_mese, b_mese)
+		underch.functions.replace(vi, data, c_stone_with_gold, b_gold)
+		underch.functions.replace(vi, data, c_stone_with_diamond, b_diamond)
+		underch.functions.replace(vi, data, c_mese_block, b_meseblock)
+
+		if underch.have_magic_materials then
+			b_februm = underch.functions.ore_reducer(base_stone, underch.stone.defs[id].with_februm, 0.6)
+			b_egerum = underch.functions.ore_reducer(base_stone, underch.stone.defs[id].with_egerum, 0.6)
+
+			underch.functions.replace(vi, data, c_stone_with_februm, b_februm)
+			underch.functions.replace(vi, data, c_stone_with_egerum, b_egerum)
+		end
+	else
+		underch.functions.replace(vi, data, c_stone_with_coal, underch.stone.defs[id].with_coal)
+		underch.functions.replace(vi, data, c_stone_with_iron, underch.stone.defs[id].with_iron)
+		underch.functions.replace(vi, data, c_stone_with_copper, underch.stone.defs[id].with_copper)
+		underch.functions.replace(vi, data, c_stone_with_tin, underch.stone.defs[id].with_tin)
+		underch.functions.replace(vi, data, c_stone_with_mese, underch.stone.defs[id].with_mese)
+		underch.functions.replace(vi, data, c_stone_with_gold, underch.stone.defs[id].with_gold)
+		underch.functions.replace(vi, data, c_stone_with_diamond, underch.stone.defs[id].with_diamond)
+
+		if underch.have_alien_material then
+			underch.functions.replace(vi, data, c_alien_mese_ore, underch.stone.defs[id].alien_mese_ore)
+			underch.functions.replace(vi, data, c_alien_diamond_ore, underch.stone.defs[id].alien_diamond_ore)
+		end
+
+		if underch.have_magic_materials then
+			underch.functions.replace(vi, data, c_stone_with_februm, underch.stone.defs[id].with_februm)
+			underch.functions.replace(vi, data, c_stone_with_egerum, underch.stone.defs[id].with_egerum)
+		end
 	end
 end
 

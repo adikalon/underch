@@ -13,7 +13,6 @@ underch.have_bucket = minetest.get_modpath("bucket") ~= nil
 underch.have_stairs = minetest.get_modpath("stairs") ~= nil
 underch.have_stairsredo = stairs and stairs.mod and stairs.mod == "redo"
 underch.have_moreblocks = minetest.get_modpath("moreblocks") ~= nil
-
 underch.have_moreores = minetest.get_modpath("moreores") ~= nil
 underch.have_technic_ores = minetest.get_modpath("technic_worldgen") ~= nil
 underch.have_xtraores = minetest.get_modpath("xtraores") ~= nil
@@ -26,6 +25,10 @@ underch.have_lootchests_default = minetest.get_modpath("lootchests_default") ~= 
 underch.have_dungeon_loot = minetest.get_modpath("dungeon_loot") ~= nil
 underch.have_bones_loot = minetest.get_modpath("bones_loot") ~= nil
 underch.have_handle_schematics = minetest.get_modpath("handle_schematics") ~= nil
+underch.have_nether = minetest.get_modpath("nether") ~= nil
+underch.have_xnether = minetest.get_modpath("xnether") ~= nil
+
+underch.hardcore_ores = minetest.settings:get_bool("underch_hardcore_ores", true)
 
 underch.use_jit = minetest.settings:get_bool("underch_ores_jit", false)
 underch.polynomial_pressure = minetest.settings:get_bool("underch_polynomial_pressure", false)

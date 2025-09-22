@@ -343,3 +343,13 @@ function underch.functions.correct_biome(biome, total, skip)
 
 	return biome
 end
+
+function underch.functions.ore_reducer(stone, ore, reducer)
+	block = stone
+
+	if math.random() >= reducer then
+		block = ore
+	end
+
+	return block
+end

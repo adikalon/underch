@@ -87,21 +87,23 @@ function underch.stone.register_stone(id, mossy, names)
 		sounds = default.node_sound_stone_defaults(),
 	})
 
-	minetest.register_node(with_mese, {
-		description = names.mese,
-		tiles = {"underch_" .. id .. ".png^default_mineral_mese.png"},
-		groups = {cracky = 1},
-		drop = "default:mese_crystal",
-		sounds = default.node_sound_stone_defaults(),
-	})
+	if not underch.have_xnether then
+		minetest.register_node(with_mese, {
+			description = names.mese,
+			tiles = {"underch_" .. id .. ".png^default_mineral_mese.png"},
+			groups = {cracky = 1},
+			drop = "default:mese_crystal",
+			sounds = default.node_sound_stone_defaults(),
+		})
 
-	minetest.register_node(with_gold, {
-		description = names.gold,
-		tiles = {"underch_" .. id .. ".png^default_mineral_gold.png"},
-		groups = {cracky = 2},
-		drop = "default:gold_lump",
-		sounds = default.node_sound_stone_defaults(),
-	})
+		minetest.register_node(with_gold, {
+			description = names.gold,
+			tiles = {"underch_" .. id .. ".png^default_mineral_gold.png"},
+			groups = {cracky = 2},
+			drop = "default:gold_lump",
+			sounds = default.node_sound_stone_defaults(),
+		})
+	end
 
 	minetest.register_node(with_diamond, {
 		description = names.diamond,
@@ -239,8 +241,12 @@ function underch.stone.register_stone(id, mossy, names)
 	underch.stone.defs[id].with_iron = minetest.get_content_id(with_iron)
 	underch.stone.defs[id].with_copper = minetest.get_content_id(with_copper)
 	underch.stone.defs[id].with_tin = minetest.get_content_id(with_tin)
-	underch.stone.defs[id].with_mese = minetest.get_content_id(with_mese)
-	underch.stone.defs[id].with_gold = minetest.get_content_id(with_gold)
+
+	if not underch.have_xnether then
+		underch.stone.defs[id].with_mese = minetest.get_content_id(with_mese)
+		underch.stone.defs[id].with_gold = minetest.get_content_id(with_gold)
+	end
+
 	underch.stone.defs[id].with_diamond = minetest.get_content_id(with_diamond)
 
 	if underch.have_alien_material then
