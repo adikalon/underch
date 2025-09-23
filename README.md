@@ -14,6 +14,7 @@ This is a fork of [this mod](https://gitlab.com/h2mm/underch) for the minetest g
 * Reduced the amount of slime and dynamic blocks
 * Added powerful but balanced swords and arrows
 * Localization added
+* Ore balance for some mods
 
 ## Layers
 
