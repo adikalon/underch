@@ -24,7 +24,6 @@ underch.have_lootchests_default = minetest.get_modpath("lootchests_default") ~= 
 underch.have_dungeon_loot = minetest.get_modpath("dungeon_loot") ~= nil
 underch.have_bones_loot = minetest.get_modpath("bones_loot") ~= nil
 underch.have_handle_schematics = minetest.get_modpath("handle_schematics") ~= nil
-underch.have_nether = minetest.get_modpath("nether") ~= nil
 underch.have_xnether = minetest.get_modpath("xnether") ~= nil
 
 underch.balanced_ores = minetest.settings:get_bool("underch_balanced_ores", true)
@@ -63,6 +62,13 @@ dofile(underch.modpath .. "/functions.lua")
 underch.jit = {}
 function underch.jit.dig_shadow(pos, oldnode, oldmetadata, digger)
 	--ores-JIT not used
+end
+
+if underch.balanced_ores and underch.have_xnether then
+	nether.register_portal_ignition_item(
+		"fire:flint_and_steel",
+		{name = "nether_portal_ignition_failure", gain = 0.3}
+	)
 end
 
 dofile(underch.modpath .. "/nodes.lua")
